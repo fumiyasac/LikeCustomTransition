@@ -8,22 +8,31 @@ import {
  View
 } from 'react-native';
 
+//NativeBaseを使用したコンポーネントの呼び出し
+import { Container } from 'native-base';
+
+//自作コンポーネントの宣言
+import CommonHeader from './common/CommonHeader';
+
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Container>
+        <CommonHeader />
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Welcome to React Native!
+          </Text>
+          <Text style={styles.instructions}>
+            To get started, edit index.ios.js
+          </Text>
+          <Text style={styles.instructions}>
+            Press Cmd+R to reload,{'\n'}
+            Cmd+D or shake for dev menu
+          </Text>
+        </View>
+      </Container>
     );
   }
 }
