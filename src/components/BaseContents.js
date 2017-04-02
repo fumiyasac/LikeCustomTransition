@@ -20,45 +20,55 @@ import SideContents from './SideContents';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
-  //ドロワーのステートに関する定義
+  //ドロワーのステートに関する処理
   state = {
     drawerOpen: false,
     drawerDisabled: false,
   };
-  //ドロワーメニューの開閉に関するメソッドを定義する
+  //ドロワーメニューの開閉に関する設定をする
   closeDrawer = () => {
-    this.drawer.root.close()
+    this._drawer._root.close()
   };
   openDrawer = () => {
-    this.drawer.root.open()
+    this._drawer._root.open()
   };
   //コンポーネントの内容をレンダリングする
+  /**
+   * NativeBaseのDrawerは下記のライブラリを拡張して作られている
+   * (各種プロパティの参考) React Native Drawer
+   * https://github.com/root-two/react-native-drawer#props
+   */
   render() {
     return (
       <Drawer
-        ref={(ref) => {this.drawer = ref;}}
+        ref={ (ref) => this._drawer = ref }
         type="overlay"
         content={
           <SideContents closeDrawer={this.closeDrawer} />
         }
-        styles={{main: {shadowColor: '#000000', shadowOpacity: 0.3, shadowRadius: 15}}}
-        onOpen={() => {
+        onOpen={ () => {
+          console.log('Drawer Open.')
           this.setState({drawerOpen: true})
         }}
-        onClose={() => {
+        onClose={ () => {
+          console.log('Drawer Close.')
           this.setState({drawerOpen: false})
         }}
-        captureGestures={false}
-        tweenDuration={100}
-        panThreshold={0.08}
+        tweenHandler={ (ratio) => {
+          return {
+            mainOverlay: { opacity: ratio / 2, backgroundColor: 'black' }
+          }
+        }}
+        captureGestures={true}
+        tweenDuration={200}
         disabled={this.state.drawerDisabled}
-        openDrawerOffset={(viewport) => {
+        openDrawerOffset={ (viewport) => {
           return 80
         }}
+        side={"left"}
         closedDrawerOffset={() => 0}
         panOpenMask={0.2}
-        side={"left"}
-        negotiatePan
+        negotiatePan={false}
         >
         <Container>
           <CommonHeader />
