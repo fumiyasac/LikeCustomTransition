@@ -27,27 +27,25 @@ class BaseContents extends Component {
   };
   //ドロワーメニューの開閉に関するメソッドを定義する
   closeDrawer = () => {
-    this._drawer._root.close()
+    this.drawer.root.close()
   };
   openDrawer = () => {
-    this._drawer._root.open()
+    this.drawer.root.open()
   };
   //コンポーネントの内容をレンダリングする
   render() {
     return (
       <Drawer
-        ref={(ref) => this._drawer = ref}
+        ref={(ref) => {this.drawer = ref;}}
         type="overlay"
         content={
           <SideContents closeDrawer={this.closeDrawer} />
         }
         styles={{main: {shadowColor: '#000000', shadowOpacity: 0.3, shadowRadius: 15}}}
         onOpen={() => {
-          console.log('Open')
           this.setState({drawerOpen: true})
         }}
         onClose={() => {
-          console.log('Close')
           this.setState({drawerOpen: false})
         }}
         captureGestures={false}
