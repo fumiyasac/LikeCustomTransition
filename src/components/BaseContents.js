@@ -9,30 +9,75 @@ import {
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
-import { Container } from 'native-base';
+import {
+  Container,
+  Drawer
+} from 'native-base';
 
 //自作コンポーネントの宣言
 import CommonHeader from './common/CommonHeader';
+import SideContents from './SideContents';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
+  //ドロワーのステートに関する定義
+  state = {
+    drawerOpen: false,
+    drawerDisabled: false,
+  };
+  //ドロワーメニューの開閉に関するメソッドを定義する
+  closeDrawer = () => {
+    this._drawer._root.close()
+  };
+  openDrawer = () => {
+    this._drawer._root.open()
+  };
+  //コンポーネントの内容をレンダリングする
   render() {
     return (
-      <Container>
-        <CommonHeader />
-        <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Welcome to React Native!
-          </Text>
-          <Text style={styles.instructions}>
-            To get started, edit index.ios.js
-          </Text>
-          <Text style={styles.instructions}>
-            Press Cmd+R to reload,{'\n'}
-            Cmd+D or shake for dev menu
-          </Text>
-        </View>
-      </Container>
+      <Drawer
+        ref={(ref) => this._drawer = ref}
+        type="overlay"
+        content={
+          <SideContents closeDrawer={this.closeDrawer} />
+        }
+        styles={{main: {shadowColor: '#000000', shadowOpacity: 0.3, shadowRadius: 15}}}
+        onOpen={() => {
+          console.log('Open')
+          this.setState({drawerOpen: true})
+        }}
+        onClose={() => {
+          console.log('Close')
+          this.setState({drawerOpen: false})
+        }}
+        captureGestures={false}
+        tweenDuration={100}
+        panThreshold={0.08}
+        disabled={this.state.drawerDisabled}
+        openDrawerOffset={(viewport) => {
+          return 80
+        }}
+        closedDrawerOffset={() => 0}
+        panOpenMask={0.2}
+        side={"left"}
+        negotiatePan
+        >
+        <Container>
+          <CommonHeader />
+          <View style={styles.container}>
+            <Text style={styles.welcome}>
+              Welcome to React Native!
+            </Text>
+            <Text style={styles.instructions}>
+              To get started, edit index.ios.js
+            </Text>
+            <Text style={styles.instructions}>
+              Press Cmd+R to reload,{'\n'}
+              Cmd+D or shake for dev menu
+            </Text>
+          </View>
+        </Container>
+      </Drawer>
     );
   }
 }

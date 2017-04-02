@@ -19,8 +19,7 @@ import {
   Icon
 } from 'native-base';
 
-//コンポーネントの内容を定義する ※ ClassComponent
-//TODO: FunctionalComponentに置き換えをする
+//コンポーネントの内容を定義する
 const CustomHeader = () => (
   <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
     <Left>
