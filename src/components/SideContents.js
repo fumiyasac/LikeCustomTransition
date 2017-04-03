@@ -16,10 +16,10 @@ import {
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
-import { Container } from 'native-base';
-
-//画面の幅と高さを取得する
-const window = Dimensions.get('window');
+import {
+  Container,
+  Button
+} from 'native-base';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class SideContents extends Component {
@@ -34,9 +34,9 @@ class SideContents extends Component {
     let {closeDrawer} = this.props;
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={closeDrawer}>
+        <Button primary onPress={closeDrawer}>
           <Text>Close Drawer</Text>
-        </TouchableOpacity>
+        </Button>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>

@@ -18,8 +18,7 @@ import {
   Left,
   Body,
   Text,
-  Button,
-  Icon
+  Button
 } from 'native-base';
 
 //デバイス幅の取得

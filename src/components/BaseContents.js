@@ -11,24 +11,31 @@ import {
 //NativeBaseを使用したコンポーネントの呼び出し
 import {
   Container,
-  Drawer
+  Drawer,
+  Header,
+  Left,
+  Right,
+  Title,
+  Body,
+  Button,
+  Icon
 } from 'native-base';
 
 //自作コンポーネントの宣言
-import CommonHeader from './common/CommonHeader';
 import SideContents from './SideContents';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
-  //ドロワーのステートに関する処理
+  //ドロワーメニューのステートに関する処理
   state = {
     drawerOpen: false,
     drawerDisabled: false,
   };
-  //ドロワーメニューの開閉に関する設定をする
+  //ドロワーメニューを閉じる際に関する設定をする
   closeDrawer = () => {
     this._drawer._root.close()
   };
+  //ドロワーメニューを開く際に関する設定をする
   openDrawer = () => {
     this._drawer._root.open()
   };
@@ -59,19 +66,41 @@ class BaseContents extends Component {
             mainOverlay: { opacity: ratio / 2, backgroundColor: 'black' }
           }
         }}
-        captureGestures={true}
+        captureGestures={false}
         tweenDuration={200}
         disabled={this.state.drawerDisabled}
         openDrawerOffset={ (viewport) => {
           return 80
         }}
         side={"left"}
-        closedDrawerOffset={() => 0}
+        closedDrawerOffset={ () => 0 }
         panOpenMask={0.2}
         negotiatePan={false}
         >
+
+        {/* Header <Start> */}
+        <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
+          <Left>
+            {/*
+            <Button transparent>
+              <Icon name='arrow-back' />
+            </Button>
+            */}
+            <Button transparent onPress={ () => this.openDrawer() }>
+              <Icon name='menu' style={styles.menuStyle} />
+            </Button>
+          </Left>
+          <Body>
+            <Title style={styles.titleStyle}>近隣のお店メモ</Title>
+          </Body>
+          <Right>
+            {/* Remark: 何もない場合にはここはブランクにする */}
+          </Right>
+        </Header>
+        {/* Header <End> */}
+
+        {/* Container <Start> */}
         <Container>
-          <CommonHeader />
           <View style={styles.container}>
             <Text style={styles.welcome}>
               Welcome to React Native!
@@ -85,13 +114,24 @@ class BaseContents extends Component {
             </Text>
           </View>
         </Container>
+        {/* Container <End> */}
+
       </Drawer>
     );
   }
 }
 
 //このコンポーネントのスタイル設定
-const styles = StyleSheet.create({
+const styles = {
+  headerBackStyle: {
+    backgroundColor: 'rgba(0, 0, 0, 0.85)'
+  },
+  titleStyle: {
+    color: 'rgba(255, 255, 255, 1)'
+  },
+  menuStyle: {
+    color: 'rgba(255, 255, 255, 1)'
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -108,6 +148,6 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+};
 
 export default BaseContents;
