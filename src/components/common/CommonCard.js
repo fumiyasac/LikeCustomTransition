@@ -6,8 +6,7 @@ import React from 'react';
 //ReactNativeを使用したコンポーネントの呼び出し
 import {
   StyleSheet,
-  Image,
-  Dimensions
+  Image
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
@@ -18,11 +17,10 @@ import {
   Left,
   Body,
   Text,
-  Button
+  Button,
+  Icon,
+  Thumbnail
 } from 'native-base';
-
-//デバイス幅の取得
-var width = Dimensions.get('window').width;
 
 //コンポーネントの内容を定義する ※ FunctionalComponent
 //参考：ES2015(ES6)新構文：アロー関数(Arrow function)
@@ -38,7 +36,7 @@ const CommonCard = ({ album }) => {
         <CardItem>
           <Body>
             <Text>{title}</Text>
-            <Text note>写真番号：No.{id} ({category})</Text>
+            <Text style={styles.noteStyle} note>写真番号：No.{id} ({category})</Text>
           </Body>
         </CardItem>
         <CardItem cardBody>
@@ -47,16 +45,12 @@ const CommonCard = ({ album }) => {
         <CardItem content>
           <Text>このAPIから表示しているものはサンプルになります。</Text>
         </CardItem>
-        <CardItem style={{ justifyContent: 'space-around' }}>
-          <Button transparent>
-            <Icon active name="thumbs-up" />
-            <Text>12 Likes</Text>
-          </Button>
+        <CardItem style={styles.cardBottomStyle}>
+          <Text>更新日：2017/04/03</Text>
           <Button transparent>
             <Icon active name="chatbubbles" />
-            <Text>4 Comments</Text>
+              <Text>詳細やコメントを見る</Text>
           </Button>
-          <Text>2 days ago</Text>
         </CardItem>
       </Card>
     </Content>
@@ -65,12 +59,17 @@ const CommonCard = ({ album }) => {
 
 //このコンポーネントのStyle定義
 const styles = {
+  noteStyle: {
+    marginTop: 5,
+  },
   imageStyle: {
-    width: width,
     marginLeft: 15,
     marginRight: 15,
     height: 300,
     flex: 1
+  },
+  cardBottomStyle: {
+    justifyContent: 'space-around'
   }
 };
 

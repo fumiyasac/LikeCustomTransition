@@ -21,8 +21,11 @@ import {
   Icon
 } from 'native-base';
 
-//自作コンポーネントの宣言
+//ドロワー用コンポーネントの宣言
 import SideContents from './SideContents';
+
+//ドロワー用コンポーネントの宣言
+import ArticleList from './screen/ArticleList';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
@@ -41,6 +44,7 @@ class BaseContents extends Component {
   };
   //コンポーネントの内容をレンダリングする
   /**
+   * Memo:
    * NativeBaseのDrawerは下記のライブラリを拡張して作られている
    * (各種プロパティの参考) React Native Drawer
    * https://github.com/root-two/react-native-drawer#props
@@ -66,7 +70,7 @@ class BaseContents extends Component {
             mainOverlay: { opacity: ratio / 2, backgroundColor: 'black' }
           }
         }}
-        captureGestures={false}
+        captureGestures={true}
         tweenDuration={200}
         disabled={this.state.drawerDisabled}
         openDrawerOffset={ (viewport) => {
@@ -74,8 +78,8 @@ class BaseContents extends Component {
         }}
         side={"left"}
         closedDrawerOffset={ () => 0 }
-        panOpenMask={0.2}
-        negotiatePan={false}
+        panOpenMask={0.04}
+        negotiatePan={true}
         >
 
         {/* Header <Start> */}
@@ -91,7 +95,7 @@ class BaseContents extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={styles.titleStyle}>近隣のお店メモ</Title>
+            <Title style={styles.titleStyle}>大塚Deお買い物</Title>
           </Body>
           <Right>
             {/* Remark: 何もない場合にはここはブランクにする */}
@@ -101,18 +105,8 @@ class BaseContents extends Component {
 
         {/* Container <Start> */}
         <Container>
-          <View style={styles.container}>
-            <Text style={styles.welcome}>
-              Welcome to React Native!
-            </Text>
-            <Text style={styles.instructions}>
-              To get started, edit index.ios.js
-            </Text>
-            <Text style={styles.instructions}>
-              Press Cmd+R to reload,{'\n'}
-              Cmd+D or shake for dev menu
-            </Text>
-          </View>
+          {/* Memo: この中にコンテンツのコンポーネントを入れる (ReduxはデータのCrudで用いる　→ App.js側で導入) */}
+          <ArticleList />
         </Container>
         {/* Container <End> */}
 
