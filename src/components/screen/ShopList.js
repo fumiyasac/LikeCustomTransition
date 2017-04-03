@@ -17,7 +17,7 @@ import CommonCard from '../common/CommonCard';
 import axios from 'axios';
 
 //コンポーネントの内容を定義する ※ ClassComponent
-class ArticleList extends Component {
+class ShopList extends Component {
 
   //ステートの初期化を行う
   state = { albums: [] };
@@ -47,4 +47,4 @@ class ArticleList extends Component {
 }
 
 //インポート可能にする宣言
-export default ArticleList;
+export default ShopList;

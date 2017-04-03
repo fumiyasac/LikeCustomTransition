@@ -24,8 +24,9 @@ import {
 //ドロワー用コンポーネントの宣言
 import SideContents from './SideContents';
 
-//ドロワー用コンポーネントの宣言
-import ArticleList from './screen/ArticleList';
+//コンテンツ用コンポーネントの宣言
+import ShopList from './screen/ShopList';
+import ShopDetail from './screen/ShopDetail';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
@@ -106,7 +107,8 @@ class BaseContents extends Component {
         {/* Container <Start> */}
         <Container>
           {/* Memo: この中にコンテンツのコンポーネントを入れる (ReduxはデータのCrudで用いる　→ App.js側で導入) */}
-          <ArticleList />
+          <ShopList />
+          {/* <ShopDetail /> */}
         </Container>
         {/* Container <End> */}
 

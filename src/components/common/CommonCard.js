@@ -43,13 +43,13 @@ const CommonCard = ({ album }) => {
           <Image style={styles.imageStyle} source={{ uri: image_url }} />
         </CardItem>
         <CardItem content>
-          <Text>このAPIから表示しているものはサンプルになります。</Text>
+          <Text style={styles.cardContentTextStyle}>このAPIから表示しているものはサンプルになります。後々に差し替えを行う予定ですので、申し訳ありませんがしばしお待ちくださいませ。</Text>
         </CardItem>
         <CardItem style={styles.cardBottomStyle}>
-          <Text>更新日：2017/04/03</Text>
+          <Text style={styles.cardBottomTextStyle}>更新日：2017/04/03</Text>
           <Button transparent>
             <Icon active name="chatbubbles" />
-              <Text>詳細やコメントを見る</Text>
+              <Text style={styles.cardBottomTextStyle}>詳細やコメントを見る</Text>
           </Button>
         </CardItem>
       </Card>
@@ -68,9 +68,16 @@ const styles = {
     height: 300,
     flex: 1
   },
+  cardContentTextStyle: {
+    fontSize: 14,
+    lineHeight: 22
+  },
   cardBottomStyle: {
     justifyContent: 'space-around'
-  }
+  },
+  cardBottomTextStyle: {
+    fontSize: 13
+  },
 };
 
 //このコンポーネントをインポート可能にする

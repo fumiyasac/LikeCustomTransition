@@ -33,6 +33,11 @@ class SideContents extends Component {
   };
 
   //コンポーネントの内容をレンダリングする
+  /**
+   * Memo: アイコン選定の参考はこちら
+   * https://github.com/oblador/react-native-vector-icons
+   * https://oblador.github.io/react-native-vector-icons/
+   */
   render() {
     let {closeDrawer} = this.props;
     return (
@@ -50,6 +55,10 @@ class SideContents extends Component {
           <ListItem onPress={closeDrawer}>
             <Icon ios='ios-pizza' android="md-pizza" style={{color: '#ffc125'}}/>
             <Text style={styles.menuTextStyle}>紹介しているお店一覧</Text>
+          </ListItem>
+          <ListItem onPress={closeDrawer}>
+            <Icon ios='ios-book' android="ios-book" style={{color: '#ff6600'}}/>
+            <Text style={styles.menuTextStyle}>コラム一覧</Text>
           </ListItem>
           <ListItem onPress={closeDrawer} last>
             <Icon ios='ios-search' android="md-search" style={{color: '#2e8b57'}}/>
