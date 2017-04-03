@@ -7,8 +7,15 @@ import React, {
 
 //ReactNativeを使用したコンポーネントの呼び出し
 import {
-  ScrollView
+  ScrollView,
+  View,
+  Text
 } from 'react-native';
+
+//NativeBaseを使用したコンポーネントの呼び出し
+import {
+  Spinner
+} from 'native-base';
 
 //アルバム詳細用の共通コンポーネントのインポート宣言
 import CommonCard from '../common/CommonCard';
@@ -20,13 +27,13 @@ import axios from 'axios';
 class ShopList extends Component {
 
   //ステートの初期化を行う
-  state = { albums: [] };
+  state = { albums: [], isLoading: true };
 
   //コンポーネントの内容がMountされる前に行う処理
   componentWillMount() {
     //Memo: 自作APIとバインドする（ここはRails4.1.7で構築）
     axios.get('https://immense-journey-38002.herokuapp.com/articles.json')
-    .then(response => this.setState({ albums: response.data.article.contents }));
+    .then(response => this.setState({ albums: response.data.article.contents, isLoading: false }));
   }
 
   //アルバムデータのレンダリングを行う
@@ -38,6 +45,15 @@ class ShopList extends Component {
 
   //コンポーネントの内容をレンダリングする
   render() {
+    if (this.state.isLoading) {
+      return (
+        <View style={styles.spinnerWrapperStyle}>
+          <Spinner color="#999" />
+          <Text style={styles.spinnerInnerText}>データ取得中...</Text>
+        </View>
+      );
+    }
+
     return (
       <ScrollView>
         {this.renderAlbums()}
@@ -45,6 +61,20 @@ class ShopList extends Component {
     );
   }
 }
+
+//このコンポーネントのスタイル設定
+const styles = {
+  spinnerWrapperStyle: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  spinnerInnerText: {
+    fontSize: 13,
+    textAlign: 'center',
+    color: '#999',
+  },
+};
 
 //インポート可能にする宣言
 export default ShopList;
