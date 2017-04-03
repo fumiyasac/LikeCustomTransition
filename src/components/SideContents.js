@@ -11,7 +11,8 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Text
+  Text,
+  Dimensions
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
@@ -24,12 +25,18 @@ import {
   Icon
 } from 'native-base';
 
+//幅と高さを取得する
+const {
+  width: DEVICE_WIDTH,
+  height: DEVICE_HEIGHT
+} = Dimensions.get('window');
+
 //コンポーネントの内容を定義する ※ ClassComponent
 class SideContents extends Component {
 
   //このコンポーネントのpropTypes(this.propsで受け取れる情報に関するもの)定義
   static propTypes = {
-    closeDrawer: PropTypes.func.isRequired
+    closeDrawer: PropTypes.func.isRequired,
   };
 
   //コンポーネントの内容をレンダリングする
@@ -39,11 +46,10 @@ class SideContents extends Component {
    * https://oblador.github.io/react-native-vector-icons/
    */
   render() {
-    let {closeDrawer} = this.props;
     return (
       <Container style={styles.containerBackgroundStyle}>
         <View style={styles.containerHeaderStyle}>
-          <Image />
+          <Image style={styles.containerHeaderImageStyle} source={require('../assets/otsuka_sample.jpg')} />
           <View style={styles.overlayStyle}>
             <Text style={styles.overlayTextStyle}>大塚Deお買い物Menu</Text>
           </View>
@@ -52,30 +58,30 @@ class SideContents extends Component {
           <Separator bordered>
             <Text>コンテンツ</Text>
           </Separator>
-          <ListItem onPress={closeDrawer}>
+          <ListItem onPress={ () => {this.props.closeDrawer("ShopList")} }>
             <Icon ios='ios-pizza' android="md-pizza" style={{color: '#ffc125'}}/>
-            <Text style={styles.menuTextStyle}>紹介しているお店一覧</Text>
+            <Text style={styles.menuTextStyle}>紹介お店一覧</Text>
           </ListItem>
-          <ListItem onPress={closeDrawer}>
+          <ListItem onPress={ () => {this.props.closeDrawer("ColumnList")} }>
             <Icon ios='ios-book' android="ios-book" style={{color: '#ff6600'}}/>
             <Text style={styles.menuTextStyle}>コラム一覧</Text>
           </ListItem>
-          <ListItem onPress={closeDrawer} last>
+          <ListItem onPress={ () => {this.props.closeDrawer("SearchList")} }>
             <Icon ios='ios-search' android="md-search" style={{color: '#2e8b57'}}/>
             <Text style={styles.menuTextStyle}>お店を探す</Text>
           </ListItem>
-          <ListItem onPress={closeDrawer}>
+          <ListItem onPress={ () => {this.props.closeDrawer("MyPurchase")} } last>
             <Icon ios='ios-cart' android="md-cart" style={{color: '#ff3333'}}/>
             <Text style={styles.menuTextStyle}>Myお買い物</Text>
           </ListItem>
           <Separator bordered>
             <Text>このサンプルに関して</Text>
           </Separator>
-          <ListItem onPress={closeDrawer}>
+          <ListItem onPress={ () => {this.props.closeDrawer("ShopList")} }>
             <Icon ios='logo-octocat' android="logo-octocat" style={{color: '#333333'}}/>
             <Text style={styles.menuTextStyle}>Githubへのリンク</Text>
           </ListItem>
-          <ListItem onPress={closeDrawer}>
+          <ListItem onPress={ () => {this.props.closeDrawer("ShopList")} }>
             <Icon ios='logo-linkedin' android="logo-linkedin" style={{color: '#0077b5'}}/>
             <Text style={styles.menuTextStyle}>SlideShareへのリンク</Text>
           </ListItem>
@@ -92,6 +98,10 @@ const styles = {
     backgroundColor: '#F5FCFF',
     position: 'relative',
   },
+  containerHeaderImageStyle: {
+    height: 160,
+    width: DEVICE_WIDTH - 80,
+  },
   overlayStyle: {
     position: 'absolute',
     left: 0,
@@ -101,7 +111,7 @@ const styles = {
     paddingRight: 15,
     paddingTop: 24,
     paddingBottom: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.35)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
   overlayTextStyle: {
     fontSize: 16,

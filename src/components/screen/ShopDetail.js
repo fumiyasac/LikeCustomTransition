@@ -49,7 +49,7 @@ const styles = {
     backgroundColor: '#333'
   },
   tabBarTextStyle: {
-    fontSize: 13
+    fontSize: 14
   },
 };
 

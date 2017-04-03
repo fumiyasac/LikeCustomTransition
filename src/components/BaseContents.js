@@ -1,7 +1,11 @@
 /**
  * ベースコンテンツ用のコンポーネント
  */
-import React, { Component } from 'react';
+import React, {
+  Component,
+  PropTypes
+} from 'react';
+
 import {
  StyleSheet,
  Text,
@@ -18,7 +22,8 @@ import {
   Title,
   Body,
   Button,
-  Icon
+  Icon,
+  Subtitle
 } from 'native-base';
 
 //ドロワー用コンポーネントの宣言
@@ -30,19 +35,47 @@ import ShopDetail from './screen/ShopDetail';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
-  //ドロワーメニューのステートに関する処理
-  state = {
-    drawerOpen: false,
-    drawerDisabled: false,
-  };
+
+  //コンストラクタ
+  constructor(props) {
+    super(props);
+
+    //ステートの初期化を行う
+    this.state = { drawerOpen: false, drawerDisabled: false, itemSelected: 'ShopList' };
+  }
+
   //ドロワーメニューを閉じる際に関する設定をする
-  closeDrawer = () => {
+  closeDrawer = (item) => {
+    this.setState({itemSelected: item})
     this._drawer._root.close()
   };
+
   //ドロワーメニューを開く際に関する設定をする
   openDrawer = () => {
     this._drawer._root.open()
   };
+
+  //ドロワーメニューに対応したシーンの切り替えをする
+  onItemSelected = (selected) => {
+    return <ShopList />
+  };
+
+  //ドロワーメニューに対応したタイトルの切り替えをする
+  onTitleSelected = (selected) => {
+    switch (selected) {
+      case "ShopList":
+        return "紹介お店一覧"
+      case "ColumnList":
+        return "コラム一覧"
+      case "SearchList":
+        return "お店を探す"
+      case "MyPurchase":
+        return "Myお買い物"
+      default:
+        return ""
+    }
+  };
+
   //コンポーネントの内容をレンダリングする
   /**
    * Memo:
@@ -59,12 +92,14 @@ class BaseContents extends Component {
           <SideContents closeDrawer={this.closeDrawer} />
         }
         onOpen={ () => {
-          console.log('Drawer Open.')
           this.setState({drawerOpen: true})
+          console.log('Drawer Open.')
+          console.log(this.state);
         }}
         onClose={ () => {
-          console.log('Drawer Close.')
           this.setState({drawerOpen: false})
+          console.log('Drawer Close.')
+          console.log(this.state);
         }}
         tweenHandler={ (ratio) => {
           return {
@@ -97,6 +132,7 @@ class BaseContents extends Component {
           </Left>
           <Body>
             <Title style={styles.titleStyle}>大塚Deお買い物</Title>
+            <Subtitle style={styles.subTitleStyle}>{this.onTitleSelected(this.state.itemSelected)}</Subtitle>
           </Body>
           <Right>
             {/* Remark: 何もない場合にはここはブランクにする */}
@@ -107,7 +143,7 @@ class BaseContents extends Component {
         {/* Container <Start> */}
         <Container>
           {/* Memo: この中にコンテンツのコンポーネントを入れる (ReduxはデータのCrudで用いる　→ App.js側で導入) */}
-          <ShopList />
+          {this.onItemSelected(this.state.itemSelected)}
           {/* <ShopDetail /> */}
         </Container>
         {/* Container <End> */}
@@ -120,29 +156,17 @@ class BaseContents extends Component {
 //このコンポーネントのスタイル設定
 const styles = {
   headerBackStyle: {
-    backgroundColor: 'rgba(0, 0, 0, 0.85)'
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
   },
   titleStyle: {
-    color: 'rgba(255, 255, 255, 1)'
+    color: 'rgba(255, 255, 255, 1)',
+  },
+  subTitleStyle: {
+    color: 'rgba(255, 255, 255, 1)',
+    fontSize: 11,
   },
   menuStyle: {
-    color: 'rgba(255, 255, 255, 1)'
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    color: 'rgba(255, 255, 255, 1)',
   },
 };
 
