@@ -14,7 +14,8 @@ import {
 
 //NativeBaseを使用したコンポーネントの呼び出し
 import {
-  Spinner
+  Spinner,
+  Button
 } from 'native-base';
 
 //アルバム詳細用の共通コンポーネントのインポート宣言
@@ -26,37 +27,70 @@ import axios from 'axios';
 //コンポーネントの内容を定義する ※ ClassComponent
 class ShopList extends Component {
 
-  //ステートの初期化を行う
-  state = { albums: [], isLoading: true };
+  //コンストラクタ
+  constructor(props) {
+    super(props);
 
-  //コンポーネントの内容がMountされる前に行う処理
-  componentWillMount() {
-    //Memo: 自作APIとバインドする（ここはRails4.1.7で構築）
-    axios.get('https://immense-journey-38002.herokuapp.com/articles.json')
-    .then(response => this.setState({ albums: response.data.article.contents, isLoading: false }));
+    //ステートの初期化を行う
+    this.state = { albums: [], isLoading: true, isError: false };
   }
 
-  //アルバムデータのレンダリングを行う
-  renderAlbums() {
+  //ショップデータをフェッチする
+  fetchShopData() {
+    //Memo: 自作APIとバインドする（ここはRails4.1.7で構築）
+    axios.get('https://immense-journey-38002.herokuapp.com/articles.json')
+    .then(response => this.setState({ albums: response.data.article.contents, isLoading: false }))
+    .catch(error => this.setState({ albums: [], isLoading: false, isError: true }));
+  }
+
+  //ショップデータの再読み込みを行う
+  reloadShops() {
+    this.state = { albums: [], isLoading: true, isError: false };
+    this.fetchShopData();
+  }
+
+  //ショップデータのレンダリングを行う
+  renderShops() {
     return this.state.albums.map(album =>
       <CommonCard key={album.title} album={album} />
     );
   }
 
+  //コンポーネントの内容がMountされる前に行う処理
+  componentWillMount() {
+    this.fetchShopData();
+  }
+
   //コンポーネントの内容をレンダリングする
   render() {
+
+    //ローデーィング時
     if (this.state.isLoading) {
       return (
         <View style={styles.spinnerWrapperStyle}>
-          <Spinner color="#999" />
+          <Spinner color="#666" />
           <Text style={styles.spinnerInnerText}>データ取得中...</Text>
+        </View>
+      );
+    }
+
+    //エラー発生時
+    if (this.state.isError) {
+      return (
+        <View style={styles.spinnerWrapperStyle}>
+          <Text style={styles.spinnerInnerTextStyle}>エラー：データを取得できませんでした。</Text>
+          <View>
+          <Button style={styles.buttonStyle} onPress={ () => this.reloadShops() } dark>
+            <Text style={styles.buttonTextStyle}>再度データを取得する</Text>
+          </Button>
+          </View>
         </View>
       );
     }
 
     return (
       <ScrollView>
-        {this.renderAlbums()}
+        {this.renderShops()}
       </ScrollView>
     );
   }
@@ -69,10 +103,20 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  spinnerInnerText: {
+  spinnerInnerTextStyle: {
     fontSize: 13,
     textAlign: 'center',
-    color: '#999',
+    color: '#666',
+  },
+  buttonStyle: {
+    marginTop: 10,
+    alignItems: 'center',
+  },
+  buttonTextStyle: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#fff',
   },
 };
 
