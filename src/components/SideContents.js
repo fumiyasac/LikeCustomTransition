@@ -77,11 +77,11 @@ class SideContents extends Component {
           <Separator bordered>
             <Text>このサンプルに関して</Text>
           </Separator>
-          <ListItem onPress={ () => {this.props.closeDrawer("ShopList")} }>
+          <ListItem onPress={ () => {this.props.closeDrawer("GithubLink")} }>
             <Icon ios='logo-octocat' android="logo-octocat" style={{color: '#333333'}}/>
             <Text style={styles.menuTextStyle}>Githubへのリンク</Text>
           </ListItem>
-          <ListItem onPress={ () => {this.props.closeDrawer("ShopList")} }>
+          <ListItem onPress={ () => {this.props.closeDrawer("SlideshareLink")} }>
             <Icon ios='logo-linkedin' android="logo-linkedin" style={{color: '#0077b5'}}/>
             <Text style={styles.menuTextStyle}>SlideShareへのリンク</Text>
           </ListItem>

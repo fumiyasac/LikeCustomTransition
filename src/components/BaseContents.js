@@ -9,7 +9,8 @@ import React, {
 import {
  StyleSheet,
  Text,
- View
+ View,
+ WebView
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
@@ -57,7 +58,22 @@ class BaseContents extends Component {
 
   //ドロワーメニューに対応したシーンの切り替えをする
   onItemSelected = (selected) => {
-    return <ShopList />
+    switch (selected) {
+      case "ShopList":
+        return <ShopList />
+      case "ColumnList":
+        return <ShopList />
+      case "SearchList":
+        return <ShopList />
+      case "MyPurchase":
+        return <ShopList />
+      case "GithubLink":
+        return <WebView source={{uri: 'https://github.com/fumiyasac'}} />
+      case "SlideshareLink":
+        return <WebView source={{uri: 'https://www.slideshare.net/fumiyasakai37'}} />
+      default:
+        return <ShopList />
+    }
   };
 
   //ドロワーメニューに対応したタイトルの切り替えをする
@@ -71,8 +87,12 @@ class BaseContents extends Component {
         return "お店を探す"
       case "MyPurchase":
         return "Myお買い物"
+      case "GithubLink":
+        return "リポジトリ"
+      case "SlideshareLink":
+        return "スライド"
       default:
-        return ""
+        return "紹介お店一覧"
     }
   };
 
