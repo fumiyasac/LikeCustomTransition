@@ -49,8 +49,8 @@ class ShopDetailContents extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={styles.titleStyle}>大塚Deお買い物</Title>
-            <Subtitle style={styles.subTitleStyle}>{this.props.title}</Subtitle>
+            <Title style={styles.titleStyle}>{this.props.title}</Title>
+            <Subtitle style={styles.subTitleStyle}></Subtitle>
           </Body>
           <Right>
           </Right>
@@ -96,7 +96,7 @@ const styles = {
     backgroundColor: '#333',
   },
   tabBarTextStyle: {
-    fontSize: 14
+    fontSize: 13
   },
 };
 

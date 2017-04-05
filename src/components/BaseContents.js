@@ -23,8 +23,7 @@ import {
   Title,
   Body,
   Button,
-  Icon,
-  Subtitle
+  Icon
 } from 'native-base';
 
 //ドロワー用コンポーネントの宣言
@@ -143,8 +142,7 @@ class BaseContents extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={styles.titleStyle}>大塚Deお買い物</Title>
-            <Subtitle style={styles.subTitleStyle}>{this.onTitleSelected(this.state.itemSelected)}</Subtitle>
+            <Title style={styles.titleStyle}>{this.onTitleSelected(this.state.itemSelected)}</Title>
           </Body>
           <Right>
             {/* Remark: 何もない場合にはここはブランクにする */}
