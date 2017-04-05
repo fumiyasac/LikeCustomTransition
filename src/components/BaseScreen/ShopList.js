@@ -1,5 +1,5 @@
 /**
- * カード型のUIを表示するコンポーネント
+ * お店一覧を表示するコンポーネント
  */
 import React, {
   Component
@@ -83,9 +83,9 @@ class ShopList extends Component {
         <View style={styles.spinnerWrapperStyle}>
           <Text style={styles.spinnerInnerTextStyle}>エラー：データを取得できませんでした。</Text>
           <View>
-          <Button style={styles.buttonStyle} onPress={ () => this.reloadShops() } dark>
-            <Text style={styles.buttonTextStyle}>再度データを取得する</Text>
-          </Button>
+            <Button style={styles.buttonStyle} onPress={ () => this.reloadShops() } dark>
+              <Text style={styles.buttonTextStyle}>再度データを取得する</Text>
+            </Button>
           </View>
         </View>
       );

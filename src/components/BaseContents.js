@@ -31,6 +31,7 @@ import SideContents from './SideContents';
 
 //コンテンツ用コンポーネントの宣言
 import ShopList from './BaseScreen/ShopList';
+import ColumnList from './BaseScreen/ColumnList';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
@@ -60,7 +61,7 @@ class BaseContents extends Component {
       case "ShopList":
         return <ShopList />
       case "ColumnList":
-        return <ShopList />
+        return <ColumnList />
       case "SearchList":
         return <ShopList />
       case "MyPurchase":
