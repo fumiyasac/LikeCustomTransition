@@ -21,8 +21,7 @@ import {
   Title,
   Body,
   Button,
-  Icon,
-  Subtitle
+  Icon
 } from 'native-base';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)
@@ -50,7 +49,6 @@ class ShopDetailContents extends Component {
           </Left>
           <Body>
             <Title style={styles.titleStyle}>{this.props.title}</Title>
-            <Subtitle style={styles.subTitleStyle}></Subtitle>
           </Body>
           <Right>
           </Right>
