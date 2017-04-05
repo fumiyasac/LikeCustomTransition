@@ -9,7 +9,7 @@ import React, {
 import {
   ScrollView,
   View,
-  Text
+  Text,
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
@@ -17,6 +17,9 @@ import {
   Spinner,
   Button
 } from 'native-base';
+
+//react-native-router-fluxのインポート宣言(Actionを使用)
+import { Actions } from 'react-native-router-flux';
 
 //アルバム詳細用の共通コンポーネントのインポート宣言
 import CommonCard from '../common/CommonCard';
@@ -32,7 +35,7 @@ class ShopList extends Component {
     super(props);
 
     //ステートの初期化を行う
-    this.state = { albums: [], isLoading: true, isError: false };
+    this.state = { albums: [], isLoading: true, isError: false, modalVisible: false };
   }
 
   //ショップデータをフェッチする
@@ -52,7 +55,7 @@ class ShopList extends Component {
   //ショップデータのレンダリングを行う
   renderShops() {
     return this.state.albums.map(album =>
-      <CommonCard key={album.title} album={album} />
+      <CommonCard key={album.id} album={album} />
     );
   }
 

@@ -22,8 +22,10 @@ import {
   Thumbnail
 } from 'native-base';
 
-//コンポーネントの内容を定義する ※ FunctionalComponent
-//参考：ES2015(ES6)新構文：アロー関数(Arrow function)
+//react-native-router-fluxのインポート宣言(Actionを使用)
+import { Actions } from 'react-native-router-flux';
+
+//一覧情報表示用のベースコンポーネントの内容を定義する
 const CommonCard = ({ album }) => {
 
   //取得した引数（オブジェクト：{ album }）を分割する
@@ -47,9 +49,9 @@ const CommonCard = ({ album }) => {
         </CardItem>
         <CardItem style={styles.cardBottomStyle}>
           <Text style={styles.cardBottomTextStyle}>更新日：2017/04/03</Text>
-          <Button disabled={true} transparent>
+          <Button onPress={ () => Actions.ShopDetail({id: id, title: title}) } transparent>
             <Icon active name="chatbubbles" />
-              <Text style={styles.cardBottomTextStyle}>今月イチオシのお店です！</Text>
+            <Text style={styles.cardBottomTextStyle}>詳細情報を見る</Text>
           </Button>
         </CardItem>
       </Card>

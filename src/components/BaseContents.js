@@ -31,8 +31,7 @@ import {
 import SideContents from './SideContents';
 
 //コンテンツ用コンポーネントの宣言
-import ShopList from './screen/ShopList';
-import ShopDetail from './screen/ShopDetail';
+import ShopList from './BaseScreen/ShopList';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
@@ -141,13 +140,8 @@ class BaseContents extends Component {
         {/* Header <Start> */}
         <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
           <Left>
-            {/*
-            <Button transparent>
-              <Icon name='arrow-back' />
-            </Button>
-            */}
             <Button transparent onPress={ () => this.openDrawer() }>
-              <Icon name='menu' style={styles.menuStyle} />
+              <Icon style={styles.menuStyle} name='menu' />
             </Button>
           </Left>
           <Body>
