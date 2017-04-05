@@ -136,8 +136,6 @@ class BaseContents extends Component {
         panOpenMask={0.04}
         negotiatePan={true}
         >
-
-        {/* Header <Start> */}
         <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
           <Left>
             <Button transparent onPress={ () => this.openDrawer() }>
@@ -152,16 +150,9 @@ class BaseContents extends Component {
             {/* Remark: 何もない場合にはここはブランクにする */}
           </Right>
         </Header>
-        {/* Header <End> */}
-
-        {/* Container <Start> */}
         <Container>
-          {/* Memo: この中にコンテンツのコンポーネントを入れる (ReduxはデータのCrudで用いる　→ App.js側で導入) */}
           {this.onItemSelected(this.state.itemSelected)}
-          {/* <ShopDetail /> */}
         </Container>
-        {/* Container <End> */}
-
       </Drawer>
     );
   }
