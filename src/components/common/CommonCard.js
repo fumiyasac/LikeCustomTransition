@@ -49,7 +49,7 @@ const CommonCard = ({ album }) => {
         </CardItem>
         <CardItem style={styles.cardBottomStyle}>
           <Text style={styles.cardBottomTextStyle}>更新日：2017/04/03</Text>
-          <Button onPress={ () => Actions.ShopDetail({id: id, title: title}) } transparent>
+          <Button onPress={ () => Actions.ShopDetailContents({id: id, title: title}) } transparent>
             <Icon active name="chatbubbles" />
             <Text style={styles.cardBottomTextStyle}>詳細情報を見る</Text>
           </Button>

@@ -13,7 +13,7 @@ import { Router, Scene, Modal, Actions } from 'react-native-router-flux';
 
 //自作コンポーネント
 import BaseContents from './components/BaseContents';
-import ShopDetail from './components/ShopDetail';
+import ShopDetailContents from './components/ShopDetailContents';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class App extends Component {
@@ -28,7 +28,7 @@ class App extends Component {
       <Router>
         <Scene key="root">
           <Scene key="BaseContents" initial={true} component={BaseContents} hideNavBar={true} />
-          <Scene key="ShopDetail" component={ShopDetail} hideNavBar={true} />
+          <Scene key="ShopDetailContents" component={ShopDetailContents} hideNavBar={true} />
         </Scene>
       </Router>
     );

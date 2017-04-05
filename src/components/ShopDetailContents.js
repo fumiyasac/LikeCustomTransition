@@ -32,7 +32,7 @@ import { Actions } from 'react-native-router-flux';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 
 //コンポーネントの内容を定義する ※ ClassComponent
-class ShopDetail extends Component {
+class ShopDetailContents extends Component {
 
   //コンポーネントの内容をレンダリングする
   /**
@@ -101,4 +101,4 @@ const styles = {
 };
 
 //このコンポーネントをインポート可能にする
-export default ShopDetail;
+export default ShopDetailContents;
