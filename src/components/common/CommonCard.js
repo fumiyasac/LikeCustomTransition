@@ -47,9 +47,9 @@ const CommonCard = ({ album }) => {
         </CardItem>
         <CardItem style={styles.cardBottomStyle}>
           <Text style={styles.cardBottomTextStyle}>更新日：2017/04/03</Text>
-          <Button transparent>
+          <Button disabled={true} transparent>
             <Icon active name="chatbubbles" />
-              <Text style={styles.cardBottomTextStyle}>詳細やコメントを見る</Text>
+              <Text style={styles.cardBottomTextStyle}>今月イチオシのお店です！</Text>
           </Button>
         </CardItem>
       </Card>
