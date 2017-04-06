@@ -20,7 +20,7 @@ import {
   Container,
   Spinner,
   Button,
-  H1
+  H3
 } from 'native-base';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)
@@ -32,13 +32,17 @@ import Carousel from 'react-native-snap-carousel';
 //HTTP通信用のライブラリ'axios'のインポート宣言
 import axios from 'axios';
 
-//
+//デバイスのサイズ取得
 const {
   width: DEVICE_WIDTH,
   height: DEVICE_HEIGHT
 } = Dimensions.get('window');
 
-//
+//ギャラリーの幅と高さ
+const sliderWidth = DEVICE_WIDTH;
+const sliderHeight = DEVICE_WIDTH * 2 / 3;
+
+//サンプルデータ
 const sample = [
   {
     title: 'Beautiful and dramatic Antelope Canyon',
@@ -83,7 +87,7 @@ class ColumnList extends Component {
           <TouchableWithoutFeedback onPress={ () => console.log("AAA") }>
             <View style={styles.overlayStyle}>
               <Text style={styles.overlayTitleStyle}>{entry.title}</Text>
-              <Text style={styles.overlayCategoryStyle}>Category</Text>
+              <Text style={styles.overlayCategoryStyle}>▶︎ このカテゴリーの記事一覧へ</Text>
             </View>
           </TouchableWithoutFeedback>
         </View>
@@ -95,18 +99,12 @@ class ColumnList extends Component {
   render() {
     return (
       <Container style={styles.backgroundContainer}>
-        <H1 style={styles.backgroundTitle}>衣食住に困らない街</H1>
-        <Text style={styles.backgroundDescription}>歴史がありながらも最近の発展やまちづくりにも目覚ましい大塚。オフィス街・地域のお祭り・ライブハウス・隠れ家的な名店等、様々な表情をこの街は見せてくれます。</Text>
-        <View style={styles.buttonWrapperStyle}>
-          <Button style={styles.buttonStyle} onPress={ () => console.log("BBB") } dark block>
-            <Text style={styles.buttonTextStyle}>キャンペーン情報を確認(〜2017/4/22)</Text>
-          </Button>
-        </View>
+        <H3 style={styles.backgroundTitle}>衣食住に困らない街</H3>
         <View style={styles.containerWrappedViewStyle}>
           <Carousel
             ref={(carousel) => { this._carousel = carousel; }}　
-            sliderWidth={DEVICE_WIDTH}
-            itemWidth={DEVICE_WIDTH - 80}
+            sliderWidth={sliderWidth}
+            itemWidth={sliderWidth}
             firstItem={0}
             inactiveSlideScale={0.86}
             inactiveSlideOpacity={0.38}
@@ -119,6 +117,14 @@ class ColumnList extends Component {
             {this.getSlides()}
           </Carousel>
         </View>
+        <ScrollView>
+          <Text style={styles.backgroundDescription}>歴史がありながらも最近の発展やまちづくりにも目覚ましい下町情緒が溢れるあたたかな街、大塚。オフィス街・地域のお祭り・ライブハウス・隠れ家的な名店等、様々な表情をこの街は見せてくれます。</Text>
+          <View style={styles.buttonWrapperStyle}>
+            <Button style={styles.buttonStyle} onPress={ () => console.log("BBB") } dark block>
+              <Text style={styles.buttonTextStyle}>キャンペーン情報をチェック</Text>
+            </Button>
+          </View>
+        </ScrollView>
       </Container>
     );
   }
@@ -133,24 +139,25 @@ const styles = {
     color: '#333',
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 24,
+    marginTop: 16,
+    marginBottom: 16,
   },
   backgroundDescription: {
     color: '#666',
     fontWeight: 'bold',
     textAlign: 'left',
-    marginTop: 24,
+    marginTop: 16,
     fontSize: 14,
     marginLeft: 16,
     marginRight: 16,
-    lineHeight: 22,
+    lineHeight: 20,
   },
   buttonWrapperStyle: {
-    marginTop: 20,
+    marginTop: 16,
   },
   buttonStyle: {
-    marginLeft: 36,
-    marginRight: 36,
+    marginLeft: 16,
+    marginRight: 16,
   },
   buttonTextStyle: {
     fontSize: 13,
@@ -159,13 +166,13 @@ const styles = {
     color: '#fff',
   },
   slideThumbnailContainerStyle: {
-    height: 200,
+    height: sliderHeight,
     backgroundColor: '#F5FCFF',
     position: 'relative',
   },
   slideThumbnailStyle: {
-    width: DEVICE_WIDTH - 80,
-    height: 200,
+    width: sliderWidth,
+    height: sliderHeight,
     backgroundColor: '#eee',
   },
   overlayStyle: {
@@ -190,16 +197,10 @@ const styles = {
     color: '#fff',
   },
   containerWrappedViewStyle: {
-    position: 'absolute',
-    height: 200,
-    left: 0,
-    right: 0,
-    bottom: 24,
-  },
-  containerCustomStyle: {
+    height: sliderHeight,
   },
   contentContainerCustomStyle: {
-    height: 200,
+    height: sliderHeight,
   },
 };
 
