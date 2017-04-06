@@ -1,5 +1,5 @@
 /**
- * お店詳細画面を表示するコンポーネント
+ * カテゴリー別のコラム一覧画面を表示するコンポーネント
  */
 import React, {
   Component
@@ -8,30 +8,31 @@ import React, {
 //ReactNativeを使用したコンポーネントの呼び出し
 import {
   StyleSheet,
-  View,
-  Text
+  View
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
 import {
   Container,
+  Content,
   Header,
   Left,
   Right,
   Title,
   Body,
   Button,
-  Icon
+  List,
+  ListItem,
+  Thumbnail,
+  Icon,
+  Text
 } from 'native-base';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)
 import { Actions } from 'react-native-router-flux';
 
-//react-native-scrollable-tab-viewのインポート宣言(TabBar実装)
-import ScrollableTabView from 'react-native-scrollable-tab-view';
-
 //コンポーネントの内容を定義する ※ ClassComponent
-class ShopDetailContents extends Component {
+class ColumnCategoryContents extends Component {
 
   //コンポーネントの内容をレンダリングする
   /**
@@ -48,28 +49,14 @@ class ShopDetailContents extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={styles.titleStyle}>{this.props.title}</Title>
+            <Title style={styles.titleStyle}>カテゴリー一覧</Title>
           </Body>
           <Right>
           </Right>
         </Header>
-        <Container>
-          <ScrollableTabView
-            tabBarActiveTextColor={'#333'}
-            tabBarUnderlineStyle={styles.tabBarUnderlineStyle}
-            tabBarTextStyle={styles.tabBarTextStyle}
-            >
-            <View tabLabel="詳細情報">
-              <Text>First Tab.</Text>
-            </View>
-            <View tabLabel="みんなのコメント">
-              <Text>Second Tab.</Text>
-            </View>
-            <View tabLabel="地図">
-              <Text>Third Tab.</Text>
-            </View>
-          </ScrollableTabView>
-        </Container>
+        <Content>
+          {/* 中身はあとから考える */}
+        </Content>
       </Container>
     );
   }
@@ -86,13 +73,7 @@ const styles = {
   titleStyle: {
     color: 'rgba(255, 255, 255, 1)',
   },
-  tabBarUnderlineStyle: {
-    backgroundColor: '#333',
-  },
-  tabBarTextStyle: {
-    fontSize: 13
-  },
 };
 
 //このコンポーネントをインポート可能にする
-export default ShopDetailContents;
+export default ColumnCategoryContents;

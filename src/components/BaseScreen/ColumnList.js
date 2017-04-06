@@ -84,7 +84,7 @@ class ColumnList extends Component {
       return (
         <View key={`${index}`} style={styles.slideThumbnailContainerStyle}>
           <Image style={styles.slideThumbnailStyle} source={{ uri: entry.illustration }} />
-          <TouchableWithoutFeedback onPress={ () => console.log("AAA") }>
+          <TouchableWithoutFeedback onPress={ () => Actions.ColumnCategoryContents() }>
             <View style={styles.overlayStyle}>
               <Text style={styles.overlayTitleStyle}>{entry.title}</Text>
               <Text style={styles.overlayCategoryStyle}>▶︎ このカテゴリーの記事一覧へ</Text>
@@ -120,7 +120,7 @@ class ColumnList extends Component {
         <ScrollView>
           <Text style={styles.backgroundDescription}>歴史がありながらも最近の発展やまちづくりにも目覚ましい下町情緒が溢れるあたたかな街、大塚。オフィス街・地域のお祭り・ライブハウス・隠れ家的な名店等、様々な表情をこの街は見せてくれます。</Text>
           <View style={styles.buttonWrapperStyle}>
-            <Button style={styles.buttonStyle} onPress={ () => console.log("BBB") } dark block>
+            <Button style={styles.buttonStyle} onPress={ () => Actions.CampaignArchiveContents() } dark block>
               <Text style={styles.buttonTextStyle}>キャンペーン情報をチェック</Text>
             </Button>
           </View>

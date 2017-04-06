@@ -18,9 +18,6 @@ import {
   Button
 } from 'native-base';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
-import { Actions } from 'react-native-router-flux';
-
 //アルバム詳細用の共通コンポーネントのインポート宣言
 import CommonCard from '../common/CommonCard';
 
