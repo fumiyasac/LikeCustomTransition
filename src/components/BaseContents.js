@@ -117,13 +117,9 @@ class BaseContents extends Component {
         }
         onOpen={ () => {
           this.setState({drawerOpen: true})
-          console.log('Drawer Open.')
-          console.log(this.state);
         }}
         onClose={ () => {
           this.setState({drawerOpen: false})
-          console.log('Drawer Close.')
-          console.log(this.state);
         }}
         tweenHandler={ (ratio) => {
           return {
