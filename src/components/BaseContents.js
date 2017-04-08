@@ -32,6 +32,11 @@ import SideContents from './SideContents';
 //コンテンツ用コンポーネントの宣言
 import ShopList from './BaseScreen/ShopList';
 import ColumnList from './BaseScreen/ColumnList';
+import PhotoGallery from './BaseScreen/PhotoGallery';
+import PurchaseHistory from './BaseScreen/PurchaseHistory';
+
+//react-native-router-fluxのインポート宣言(Actionを使用)
+import { Actions } from 'react-native-router-flux';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class BaseContents extends Component {
@@ -62,10 +67,10 @@ class BaseContents extends Component {
         return <ShopList />
       case "ColumnList":
         return <ColumnList />
-      case "SearchList":
-        return <ShopList />
+      case "PhotoGallery":
+        return <PhotoGallery />
       case "MyPurchase":
-        return <ShopList />
+        return <PurchaseHistory />
       case "GithubLink":
         return <WebView source={{uri: 'https://github.com/fumiyasac'}} />
       case "SlideshareLink":
@@ -82,8 +87,8 @@ class BaseContents extends Component {
         return "紹介お店一覧"
       case "ColumnList":
         return "コラム一覧"
-      case "SearchList":
-        return "お店を探す"
+      case "PhotoGallery":
+        return "写真ギャラリー"
       case "MyPurchase":
         return "Myお買い物"
       case "GithubLink":
@@ -146,7 +151,9 @@ class BaseContents extends Component {
             <Title style={styles.titleStyle}>{this.onTitleSelected(this.state.itemSelected)}</Title>
           </Body>
           <Right>
-            {/* Remark: 何もない場合にはここはブランクにする */}
+            <Button transparent onPress={ () => Actions.SearchShopContents() }>
+              <Icon style={styles.searchStyle} name="search" />
+            </Button>
           </Right>
         </Header>
         <Container>
@@ -163,6 +170,9 @@ const styles = {
     backgroundColor: 'rgba(0, 0, 0, 0.85)',
   },
   titleStyle: {
+    color: 'rgba(255, 255, 255, 1)',
+  },
+  searchStyle: {
     color: 'rgba(255, 255, 255, 1)',
   },
   subTitleStyle: {

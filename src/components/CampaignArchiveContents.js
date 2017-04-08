@@ -61,40 +61,12 @@ class CampaignArchiveContents extends Component {
               <Thumbnail square size={80} source={require('../assets/otsuka_sample.jpg')} />
             </Left>
             <Body>
-              <Text>Sankhadeep</Text>
-              <Text note>Its time to build a difference . .</Text>
+              <Text>【終了】~2017/04/01</Text>
+              <Text note>美容室「○○○」でヘッドスパをサービス！</Text>
             </Body>
             <Right>
               <Button transparent>
-                <Text>View</Text>
-              </Button>
-            </Right>
-          </ListItem>
-          <ListItem thumbnail>
-            <Left>
-              <Thumbnail square size={80} source={require('../assets/otsuka_sample.jpg')} />
-            </Left>
-            <Body>
-              <Text>Sankhadeep</Text>
-              <Text note>Its time to build a difference . .</Text>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Text>View</Text>
-              </Button>
-            </Right>
-          </ListItem>
-          <ListItem thumbnail>
-            <Left>
-              <Thumbnail square size={80} source={require('../assets/otsuka_sample.jpg')} />
-            </Left>
-            <Body>
-              <Text>Sankhadeep</Text>
-              <Text note>Its time to build a difference . .</Text>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Text>View</Text>
+                <Text>詳細を見る</Text>
               </Button>
             </Right>
           </ListItem>
