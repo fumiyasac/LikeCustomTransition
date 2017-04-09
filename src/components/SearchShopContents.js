@@ -82,7 +82,7 @@ const styles = {
   },
   footerTextStyle: {
     color: 'rgba(255, 255, 255, 1)',
-    fontSize: 16,
+    fontSize: 14,
   },
 };
 

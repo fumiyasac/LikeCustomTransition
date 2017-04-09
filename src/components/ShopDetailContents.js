@@ -30,6 +30,10 @@ import { Actions } from 'react-native-router-flux';
 //react-native-scrollable-tab-viewのインポート宣言(TabBar実装)
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 
+//コンテンツ用コンポーネントの宣言
+import ShopList from './ShopDetailScreen/ShopInfo';
+import ShopComment from './ShopDetailScreen/ShopComment';
+
 //コンポーネントの内容を定義する ※ ClassComponent
 class ShopDetailContents extends Component {
 
@@ -59,15 +63,8 @@ class ShopDetailContents extends Component {
             tabBarUnderlineStyle={styles.tabBarUnderlineStyle}
             tabBarTextStyle={styles.tabBarTextStyle}
             >
-            <View tabLabel="詳細情報">
-              <Text>First Tab.</Text>
-            </View>
-            <View tabLabel="みんなのコメント">
-              <Text>Second Tab.</Text>
-            </View>
-            <View tabLabel="地図">
-              <Text>Third Tab.</Text>
-            </View>
+            <ShopList tabLabel="詳細情報" />
+            <ShopComment tabLabel="みんなのコメント" />
           </ScrollableTabView>
         </Container>
       </Container>

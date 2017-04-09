@@ -144,7 +144,6 @@ const styles = {
   },
   backgroundDescription: {
     color: '#666',
-    fontWeight: 'bold',
     textAlign: 'left',
     marginTop: 16,
     fontSize: 14,
