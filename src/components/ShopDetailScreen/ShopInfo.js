@@ -12,11 +12,8 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  Dimensions
+  Dimensions,
 } from 'react-native';
-
-//react-native-parallax-viewのインポート宣言(パララックス入りの詳細表示の実装)
-//import ParallaxView from 'react-native-parallax-view';
 
 //NativeBaseを使用したコンポーネントの呼び出し
 import {
@@ -100,43 +97,45 @@ class ShopInfo extends Component {
             </View>
             {/* 3. テキスト */}
             <View>
+              <ListItem itemDivider>
+                <Text>お店の説明</Text>
+              </ListItem>
               <Text style={styles.textDetailStyle}>歴史がありながらも最近の発展やまちづくりにも目覚ましい下町情緒が溢れるあたたかな街、大塚。オフィス街・地域のお祭り・ライブハウス・隠れ家的な名店等、様々な表情をこの街は見せてくれます。</Text>
             </View>
             {/* 4. お店の情報 */}
+            <View style={{ backgroundColor: '#999999', width: DEVICE_WIDTH, height: 240 }}>
+              {/* この辺は項目考えて入れる */}
+            </View>
             <View>
+              <ListItem itemDivider>
+                <Text>ああああああ</Text>
+              </ListItem>
               <ListItem>
-                <Left>
-                  <Text>タイトルが入ります。</Text>
-                </Left>
-                <Body>
-                  <Text>タイトルが入ります。タイトルが入ります。タイトルが入ります。</Text>
-                </Body>
+                <Text>Simon Mignolet</Text>
                 <Right>
+                  <Text note>ああああああああ</Text>
                 </Right>
               </ListItem>
             </View>
             {/* 5. サブメニュー */}
             <View>
+              <ListItem itemDivider>
+                <Text>その他情報へのリンク</Text>
+              </ListItem>
               <ListItem bordered>
-                <Text>Simon Mignolet</Text>
+                <Text>食べログへのリンク</Text>
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
               </ListItem>
               <ListItem>
-                <Text>Simon Mignolet</Text>
+                <Text>HotPepperへのリンク</Text>
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
               </ListItem>
               <ListItem>
-                <Text>Simon Mignolet</Text>
-                <Right>
-                  <Icon name="arrow-forward" />
-                </Right>
-              </ListItem>
-              <ListItem>
-                <Text>Simon Mignolet</Text>
+                <Text>ぐるなびへのリンク</Text>
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
@@ -144,61 +143,6 @@ class ShopInfo extends Component {
             </View>
           </Content>
         </ScrollView>
-          {/*
-          <ParallaxView
-            ref={component => this._scrollView = component}
-            backgroundSource={{ uri: "http://i.imgur.com/mEVXC36.jpg" }}
-            windowHeight={300}
-            >
-            <View>
-              <Text>
-                Lorem ipsum dolor sit amet, magna assum officiis ut duo, audire elaboraret in cum. Praesent periculis nam
-                cu, an dicunt detracto nam. Nec salutandi iracundia ut, mea ea probo detraxit, ferri vituperatoribus est eu.
-                Populo nemore qualisque vis te, at numquam persequeris duo.
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, magna assum officiis ut duo, audire elaboraret in cum. Praesent periculis nam
-                cu, an dicunt detracto nam. Nec salutandi iracundia ut, mea ea probo detraxit, ferri vituperatoribus est eu.
-                Populo nemore qualisque vis te, at numquam persequeris duo.
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, magna assum officiis ut duo, audire elaboraret in cum. Praesent periculis nam
-                cu, an dicunt detracto nam. Nec salutandi iracundia ut, mea ea probo detraxit, ferri vituperatoribus est eu.
-                Populo nemore qualisque vis te, at numquam persequeris duo.
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, magna assum officiis ut duo, audire elaboraret in cum. Praesent periculis nam
-                cu, an dicunt detracto nam. Nec salutandi iracundia ut, mea ea probo detraxit, ferri vituperatoribus est eu.
-                Populo nemore qualisque vis te, at numquam persequeris duo.
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, magna assum officiis ut duo, audire elaboraret in cum. Praesent periculis nam
-                cu, an dicunt detracto nam. Nec salutandi iracundia ut, mea ea probo detraxit, ferri vituperatoribus est eu.
-                Populo nemore qualisque vis te, at numquam persequeris duo.
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, magna assum officiis ut duo, audire elaboraret in cum. Praesent periculis nam
-                cu, an dicunt detracto nam. Nec salutandi iracundia ut, mea ea probo detraxit, ferri vituperatoribus est eu.
-                Populo nemore qualisque vis te, at numquam persequeris duo.
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, magna assum officiis ut duo, audire elaboraret in cum. Praesent periculis nam
-                cu, an dicunt detracto nam. Nec salutandi iracundia ut, mea ea probo detraxit, ferri vituperatoribus est eu.
-                Populo nemore qualisque vis te, at numquam persequeris duo.
-              </Text>
-              <Text>
-                Lorem ipsum dolor sit amet, magna assum officiis ut duo, audire elaboraret in cum. Praesent periculis nam
-                cu, an dicunt detracto nam. Nec salutandi iracundia ut, mea ea probo detraxit, ferri vituperatoribus est eu.
-                Populo nemore qualisque vis te, at numquam persequeris duo.
-              </Text>
-              <TouchableOpacity onPress={ () => {this._scrollView.scrollTo(0, 0);}}>
-                <Text style={{color: '#00A7FF'}}>
-                  Scroll to top
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </ParallaxView>
-          */}
       </Container>
     );
   }
