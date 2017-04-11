@@ -66,10 +66,6 @@ class SideContents extends Component {
             <Icon ios='ios-book' android="ios-book" style={{color: '#ff6600'}}/>
             <Text style={styles.menuTextStyle}>コラム一覧</Text>
           </ListItem>
-          <ListItem onPress={ () => {this.props.closeDrawer("PhotoGallery")} }>
-            <Icon ios='ios-images' android="md-images" style={{color: '#2e8b57'}}/>
-            <Text style={styles.menuTextStyle}>写真ギャラリー</Text>
-          </ListItem>
           <ListItem onPress={ () => {this.props.closeDrawer("MyPurchase")} } last>
             <Icon ios='ios-cart' android="md-cart" style={{color: '#ff3333'}}/>
             <Text style={styles.menuTextStyle}>Myお買い物</Text>

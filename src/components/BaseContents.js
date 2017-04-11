@@ -32,7 +32,6 @@ import SideContents from './SideContents';
 //コンテンツ用コンポーネントの宣言
 import ShopList from './BaseScreen/ShopList';
 import ColumnList from './BaseScreen/ColumnList';
-import PhotoGallery from './BaseScreen/PhotoGallery';
 import PurchaseHistory from './BaseScreen/PurchaseHistory';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)
@@ -67,8 +66,6 @@ class BaseContents extends Component {
         return <ShopList />
       case "ColumnList":
         return <ColumnList />
-      case "PhotoGallery":
-        return <PhotoGallery />
       case "MyPurchase":
         return <PurchaseHistory />
       case "GithubLink":
@@ -87,8 +84,6 @@ class BaseContents extends Component {
         return "紹介お店一覧"
       case "ColumnList":
         return "コラム一覧"
-      case "PhotoGallery":
-        return "写真ギャラリー"
       case "MyPurchase":
         return "Myお買い物"
       case "GithubLink":

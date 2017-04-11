@@ -48,6 +48,9 @@ const {
   height: DEVICE_HEIGHT
 } = Dimensions.get('window');
 
+//react-native-router-fluxのインポート宣言(Actionを使用)
+import { Actions } from 'react-native-router-flux';
+
 //コンポーネントの内容を定義する ※ ClassComponent
 class ShopInfo extends Component {
 
@@ -73,6 +76,7 @@ class ShopInfo extends Component {
                     <Text style={styles.commentTextStyle} note>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</Text>
                   </Body>
                   <Right>
+                    <Text style={styles.genreTextStyle} note>ラーメン</Text>
                   </Right>
                 </ListItem>
               </Content>
@@ -103,8 +107,11 @@ class ShopInfo extends Component {
               <Text style={styles.textDetailStyle}>歴史がありながらも最近の発展やまちづくりにも目覚ましい下町情緒が溢れるあたたかな街、大塚。オフィス街・地域のお祭り・ライブハウス・隠れ家的な名店等、様々な表情をこの街は見せてくれます。</Text>
             </View>
             {/* 4. お店の情報 */}
-            <View style={{ backgroundColor: '#999999', width: DEVICE_WIDTH, height: 240 }}>
+            <View style={{ backgroundColor: '#999999', width: DEVICE_WIDTH, height: 120 }}>
               {/* この辺は項目考えて入れる */}
+              <Button transparent onPress={ () => Actions.PhotoGalleryContents() }>
+                <Icon name='arrow-back' />
+              </Button>
             </View>
             <View>
               <ListItem itemDivider>
@@ -150,6 +157,16 @@ class ShopInfo extends Component {
 
 //このコンポーネントのスタイル設定
 const styles = {
+  genreTextStyle: {
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+    fontSize: 14,
+    fontWeight: "bold",
+    color: "#fff",
+    backgroundColor: "#ffa000",
+  },
   commentTextStyle: {
     paddingTop: 8,
     paddingBottom: 8,

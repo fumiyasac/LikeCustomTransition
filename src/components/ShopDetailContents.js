@@ -21,7 +21,8 @@ import {
   Title,
   Body,
   Button,
-  Icon
+  Icon,
+  ScrollableTab
 } from 'native-base';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)

@@ -15,6 +15,7 @@ import { Router, Scene, Actions } from 'react-native-router-flux';
 import BaseContents from './components/BaseContents';
 import ShopDetailContents from './components/ShopDetailContents';
 import SearchShopContents from './components/SearchShopContents';
+import PhotoGalleryContents from './components/PhotoGalleryContents';
 import ColumnCategoryContents from './components/ColumnCategoryContents';
 import CampaignArchiveContents from './components/CampaignArchiveContents';
 
@@ -34,6 +35,7 @@ class App extends Component {
           <Scene key="ShopDetailContents" component={ShopDetailContents} hideNavBar={true} />
           <Scene key="ColumnCategoryContents" component={ColumnCategoryContents} hideNavBar={true} />
           <Scene key="CampaignArchiveContents" component={CampaignArchiveContents} hideNavBar={true} />
+          <Scene key="PhotoGalleryContents" component={PhotoGalleryContents} hideNavBar={true} />
           <Scene key="SearchShopContents" direction="vertical" component={SearchShopContents} hideNavBar={true} />
         </Scene>
       </Router>

@@ -27,8 +27,7 @@ import {
   Text,
   Item,
   Input,
-  Footer,
-  FooterTab
+  Form
 } from 'native-base';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)
@@ -46,24 +45,25 @@ class SearchShopContents extends Component {
    return (
      <Container>
       <Header iosBarStyle="light-content" style={styles.headerBackStyle} searchBar rounded>
-        <Item>
-          <Icon name="search" />
-          <Input placeholder="お店を検索する" />
-        </Item>
-        <Button transparent>
-          <Text style={styles.searchButtonStyle}>検索</Text>
-        </Button>
+        <Left>
+          <Button transparent onPress={ () => Actions.pop() }>
+            <Icon style={styles.backStyle} name='close' />
+          </Button>
+        </Left>
+        <Body>
+          <Title style={styles.titleStyle}>検索</Title>
+        </Body>
+        <Right>
+        </Right>
       </Header>
       <Content>
-      {/* 中身はあとから考える */}
+        <Form>
+          <Item>
+            <Icon name="search" />
+            <Input placeholder="お店を検索する" />
+          </Item>
+        </Form>
       </Content>
-      <Footer>
-        <FooterTab>
-          <Button style={styles.footerBackStyle} full onPress={ () => Actions.pop() }>
-            <Text style={styles.footerTextStyle}>戻る</Text>
-          </Button>
-        </FooterTab>
-      </Footer>
      </Container>
    );
  }
@@ -74,15 +74,11 @@ const styles = {
   headerBackStyle: {
     backgroundColor: 'rgba(0, 0, 0, 0.85)',
   },
-  searchButtonStyle: {
+  backStyle: {
     color: 'rgba(255, 255, 255, 1)',
   },
-  footerBackStyle: {
-    backgroundColor: 'rgba(0, 0, 0, 0.85)',
-  },
-  footerTextStyle: {
+  titleStyle: {
     color: 'rgba(255, 255, 255, 1)',
-    fontSize: 14,
   },
 };
 

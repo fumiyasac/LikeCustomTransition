@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -27,6 +28,7 @@
 		183D8741D6A541DB83D7AD68 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6375B8B0D2CA453B8ABB17E7 /* Rubik-Medium.ttf */; };
 		1CCFB7E20F0E47B9BF88FFE0 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B351A4E4F9DD49C5B013663D /* Rubik-BlackItalic.ttf */; };
 		1F23C77755DB47CB91A895D0 /* Microsoft Sans Serif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E39BF4A75BA945BDBB6F6979 /* Microsoft Sans Serif.ttf */; };
+		20459B53F1DB43848FF74A0D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D35E3FA1EC0A42C79648F71A /* libz.tbd */; };
 		20953F4E435C43EFBFECEAE0 /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B04166D5B6B499086185D83 /* Arial.ttf */; };
 		28BDAD160B0F4C6DAEC74A9C /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CCC12E92E3E4422A39433E2 /* Roboto.ttf */; };
 		29052624F73E49FE8449FDAF /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65DE70CEC32B496D9CAA6C60 /* FontAwesome.ttf */; };
@@ -51,6 +53,7 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		60C62F5250E840F999F6377E /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC11006E6F144089BA5F1145 /* Entypo.ttf */; };
 		64FFF1BE989B4E48817F52C5 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52009ABDDE83408E995FC24E /* Zocial.ttf */; };
+		6DF8FD494F7F45C0A7276D1B /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B32CCD8BC16446793CEDADE /* libRealmReact.a */; };
 		7EAA9BD4BD204600BC7D719D /* Courier New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF16E32045A14CFBAE546607 /* Courier New.ttf */; };
 		8279EF5E9B494F43BBC5AAEE /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB1B29B34B24817A6898B65 /* Rubik-BoldItalic.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -59,6 +62,7 @@
 		A96B90F48910464F88104BCB /* Arial Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 169CCD60F60449C9AA1C6B20 /* Arial Black.ttf */; };
 		AF6E21A6D17549A781BA428D /* SanFranciscoThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5FD036206F2426A9C0BBDDD /* SanFranciscoThin.ttf */; };
 		B050ECFCB78D4D6E936FAE23 /* SanFranciscoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57FDD2AECF0D4E8CAF532BB7 /* SanFranciscoBold.ttf */; };
+		B4AEBC9DF8154470B8F13861 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E14B79006BB04510BF79A56F /* libc++.tbd */; };
 		B4E3D729B72B46DF9BE01BD6 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98C1E4AD95CF4A8DB9FA9AB8 /* EvilIcons.ttf */; };
 		C28224B914504660AE9DEF98 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEF4A699817B49D892B9265F /* Rubik-Bold.ttf */; };
 		D0654C0144A0448FA97A8B7B /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 254893DEE73F48B89350FE02 /* Rubik-Light.ttf */; };
@@ -261,6 +265,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		DE3652581E9BE02F007E271C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 803ECE205A384F7D94458F87 /* RealmReact.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F60690131CA2766F0003FB26;
+			remoteInfo = RealmReact;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -306,9 +317,11 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7A2ED746FC9D43AAB720E2FB /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-MediumItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		7B04166D5B6B499086185D83 /* Arial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Arial.ttf; path = "../node_modules/native-base/Fonts/Arial.ttf"; sourceTree = "<group>"; };
+		803ECE205A384F7D94458F87 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8CDE4E8679E84316B35345FA /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		98C1E4AD95CF4A8DB9FA9AB8 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		9B32CCD8BC16446793CEDADE /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
 		AC11006E6F144089BA5F1145 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		AEFC09E10BFE469D88304D94 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		AF16E32045A14CFBAE546607 /* Courier New.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Courier New.ttf"; path = "../node_modules/native-base/Fonts/Courier New.ttf"; sourceTree = "<group>"; };
@@ -317,7 +330,9 @@
 		BC5883BA78F9469581F1BCA0 /* Andale Mono.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Andale Mono.ttf"; path = "../node_modules/native-base/Fonts/Andale Mono.ttf"; sourceTree = "<group>"; };
 		BEF4A699817B49D892B9265F /* Rubik-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Bold.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		CA19758A8EB34A99BF53689C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		D35E3FA1EC0A42C79648F71A /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D5FD036206F2426A9C0BBDDD /* SanFranciscoThin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SanFranciscoThin.ttf; path = "../node_modules/native-base/Fonts/SanFranciscoThin.ttf"; sourceTree = "<group>"; };
+		E14B79006BB04510BF79A56F /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E259161A360A40B5A8E986F3 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-LightItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
 		E39BF4A75BA945BDBB6F6979 /* Microsoft Sans Serif.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Microsoft Sans Serif.ttf"; path = "../node_modules/native-base/Fonts/Microsoft Sans Serif.ttf"; sourceTree = "<group>"; };
 		ECE5184BD9A2458E99A44043 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Italic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Italic.ttf"; sourceTree = "<group>"; };
@@ -348,6 +363,9 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				6DF8FD494F7F45C0A7276D1B /* libRealmReact.a in Frameworks */,
+				B4AEBC9DF8154470B8F13861 /* libc++.tbd in Frameworks */,
+				20459B53F1DB43848FF74A0D /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +573,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				803ECE205A384F7D94458F87 /* RealmReact.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -576,6 +595,7 @@
 				00E356EF1AD99517003FC87E /* LikeCustomTransitionTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				6B13D40D748242FFB8A9973E /* Resources */,
+				C3158E93064F4A319AAF231D /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -588,6 +608,23 @@
 				00E356EE1AD99517003FC87E /* LikeCustomTransitionTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* LikeCustomTransition-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* LikeCustomTransition-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3158E93064F4A319AAF231D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E14B79006BB04510BF79A56F /* libc++.tbd */,
+				D35E3FA1EC0A42C79648F71A /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE36523C1E9BE02F007E271C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE3652591E9BE02F007E271C /* libRealmReact.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -749,6 +786,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = DE36523C1E9BE02F007E271C /* Products */;
+					ProjectRef = 803ECE205A384F7D94458F87 /* RealmReact.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -937,6 +978,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		DE3652591E9BE02F007E271C /* libRealmReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRealmReact.a;
+			remoteRef = DE3652581E9BE02F007E271C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1111,12 +1159,14 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = LikeCustomTransitionTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1134,12 +1184,14 @@
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = LikeCustomTransitionTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1159,6 +1211,7 @@
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = LikeCustomTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1180,6 +1233,7 @@
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = LikeCustomTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1207,11 +1261,13 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = "LikeCustomTransition-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1239,11 +1295,13 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = "LikeCustomTransition-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1272,6 +1330,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.LikeCustomTransition-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1296,6 +1355,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.LikeCustomTransition-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
