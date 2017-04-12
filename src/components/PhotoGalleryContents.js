@@ -99,7 +99,7 @@ const styles = {
     color: 'rgba(255, 255, 255, 1)',
   },
   gridView: {
-    paddingTop: 25,
+    paddingTop: 10,
     flex: 1,
   },
   itemContainer: {
