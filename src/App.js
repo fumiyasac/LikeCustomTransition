@@ -34,6 +34,7 @@ class App extends Component {
           <Scene key="BaseContents" initial={true} component={BaseContents} hideNavBar={true} />
           <Scene key="ShopDetailContents" component={ShopDetailContents} hideNavBar={true} />
           <Scene key="ColumnCategoryContents" component={ColumnCategoryContents} hideNavBar={true} />
+          <Scene key="ColumnDetailContents" direction="vertical" component={ColumnDetailContents} hideNavBar={true} />
           <Scene key="CampaignArchiveContents" component={CampaignArchiveContents} hideNavBar={true} />
           <Scene key="PhotoGalleryContents" component={PhotoGalleryContents} hideNavBar={true} />
           <Scene key="SearchShopContents" direction="vertical" component={SearchShopContents} hideNavBar={true} />
