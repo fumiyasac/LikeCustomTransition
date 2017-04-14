@@ -57,18 +57,7 @@ class PhotoGalleryContents extends Component {
     ];
     return (
       <Container>
-        <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
-          <Left>
-            <Button transparent onPress={ () => Actions.pop() }>
-              <Icon style={styles.backStyle} name='arrow-back' />
-            </Button>
-          </Left>
-          <Body>
-            <Title style={styles.titleStyle}>ギャラリー</Title>
-          </Body>
-          <Right>
-          </Right>
-        </Header>
+        <CommonHeader title={"ああああ"} />
         <Content>
           <GridView
             itemWidth={130}

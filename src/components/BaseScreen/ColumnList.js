@@ -84,7 +84,7 @@ class ColumnList extends Component {
       return (
         <View key={`${index}`} style={styles.slideThumbnailContainerStyle}>
           <Image style={styles.slideThumbnailStyle} source={{ uri: entry.illustration }} />
-          <TouchableWithoutFeedback onPress={ () => Actions.ColumnCategoryContents() }>
+          <TouchableWithoutFeedback onPress={ () => Actions.ColumnDetailContents() }>
             <View style={styles.overlayStyle}>
               <Text style={styles.overlayTitleStyle}>{entry.title}</Text>
               <Text style={styles.overlayCategoryStyle}>▶︎ このカテゴリーの記事一覧へ</Text>

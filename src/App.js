@@ -17,6 +17,7 @@ import ShopDetailContents from './components/ShopDetailContents';
 import SearchShopContents from './components/SearchShopContents';
 import PhotoGalleryContents from './components/PhotoGalleryContents';
 import ColumnCategoryContents from './components/ColumnCategoryContents';
+import ColumnDetailContents from './components/ColumnDetailContents';
 import CampaignArchiveContents from './components/CampaignArchiveContents';
 
 //コンポーネントの内容を定義する ※ ClassComponent
@@ -34,7 +35,7 @@ class App extends Component {
           <Scene key="BaseContents" initial={true} component={BaseContents} hideNavBar={true} />
           <Scene key="ShopDetailContents" component={ShopDetailContents} hideNavBar={true} />
           <Scene key="ColumnCategoryContents" component={ColumnCategoryContents} hideNavBar={true} />
-          <Scene key="ColumnDetailContents" direction="vertical" component={ColumnDetailContents} hideNavBar={true} />
+          <Scene key="ColumnDetailContents" component={ColumnDetailContents} hideNavBar={true} />
           <Scene key="CampaignArchiveContents" component={CampaignArchiveContents} hideNavBar={true} />
           <Scene key="PhotoGalleryContents" component={PhotoGalleryContents} hideNavBar={true} />
           <Scene key="SearchShopContents" direction="vertical" component={SearchShopContents} hideNavBar={true} />
