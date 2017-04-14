@@ -1,12 +1,11 @@
 /**
- * カード型のUIのベース部分を表示するコンポーネント
+ * 共通ヘッダーのUI部分を表示するコンポーネント
  */
 import React from 'react';
 
 //ReactNativeを使用したコンポーネントの呼び出し
 import {
-  StyleSheet,
-  Image
+  StyleSheet
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
@@ -25,14 +24,14 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 //ヘッダー用のベースコンポーネントの内容を定義する
-const CommonHeader = ({ title }) => {
+const CommonHeader = ({ title, icon }) => {
 
   //表示する要素を返す
   return (
     <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
       <Left>
         <Button transparent onPress={ () => Actions.pop() }>
-          <Icon style={styles.backStyle} name='arrow-back' />
+          <Icon style={styles.backStyle} name={icon || "arrow-back"} />
         </Button>
       </Left>
       <Body>

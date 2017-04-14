@@ -1,5 +1,5 @@
 /**
- * NativeBaseのシンプルなリストUIのベース部分を表示するコンポーネント
+ * キャンペーンリスト表示用UIのベース部分を表示するコンポーネント
  */
 import React from 'react';
 
@@ -24,7 +24,7 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 //一覧シンプルリスト表示用のベースコンポーネントの内容を定義する
-const CommonSimpleListItem = ({ campaign }) => {
+const CommonCampaignListItem = ({ campaign }) => {
 
   //取得した引数（オブジェクト：{ campaign }）を分割する
   const { id, title, catchcopy, image_url, status } = campaign;
@@ -58,4 +58,4 @@ const CommonSimpleListItem = ({ campaign }) => {
 const styles = {};
 
 //このコンポーネントをインポート可能にする
-export default CommonSimpleListItem;
+export default CommonCampaignListItem;

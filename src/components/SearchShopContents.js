@@ -30,8 +30,8 @@ import {
   Form
 } from 'native-base';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
-import { Actions } from 'react-native-router-flux';
+//共通ヘッダーのインポート宣言
+import CommonHeader from './common/CommonHeader';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class SearchShopContents extends Component {
@@ -44,18 +44,7 @@ class SearchShopContents extends Component {
  render() {
    return (
      <Container>
-      <Header iosBarStyle="light-content" style={styles.headerBackStyle} searchBar rounded>
-        <Left>
-          <Button transparent onPress={ () => Actions.pop() }>
-            <Icon style={styles.backStyle} name='close' />
-          </Button>
-        </Left>
-        <Body>
-          <Title style={styles.titleStyle}>検索</Title>
-        </Body>
-        <Right>
-        </Right>
-      </Header>
+      <CommonHeader title={"検索"} icon={"close"} />
       <Content>
         <Form>
           <Item>
@@ -70,17 +59,7 @@ class SearchShopContents extends Component {
 }
 
 //このコンポーネントのスタイル設定
-const styles = {
-  headerBackStyle: {
-    backgroundColor: 'rgba(0, 0, 0, 0.85)',
-  },
-  backStyle: {
-    color: 'rgba(255, 255, 255, 1)',
-  },
-  titleStyle: {
-    color: 'rgba(255, 255, 255, 1)',
-  },
-};
+const styles = {};
 
 //このコンポーネントをインポート可能にする
 export default SearchShopContents;

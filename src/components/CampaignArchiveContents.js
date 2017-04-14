@@ -28,8 +28,8 @@ import {
   Text
 } from 'native-base';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
-import { Actions } from 'react-native-router-flux';
+//共通ヘッダーのインポート宣言
+import CommonHeader from './common/CommonHeader';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class CampaignArchiveContents extends Component {
@@ -42,18 +42,7 @@ class CampaignArchiveContents extends Component {
   render() {
     return (
       <Container>
-        <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
-          <Left>
-            <Button transparent onPress={ () => Actions.pop() }>
-              <Icon style={styles.backStyle} name='arrow-back' />
-            </Button>
-          </Left>
-          <Body>
-            <Title style={styles.titleStyle}>キャンペーン</Title>
-          </Body>
-          <Right>
-          </Right>
-        </Header>
+        <CommonHeader title={"キャンペーン"} />
         <Content>
           {/* モックなんであとで差し替える */}
           <ListItem thumbnail>

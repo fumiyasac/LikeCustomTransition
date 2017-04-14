@@ -28,11 +28,11 @@ import {
   Text
 } from 'native-base';
 
-//
-import GridView from 'react-native-super-grid';
+//共通ヘッダーのインポート宣言
+import CommonHeader from './common/CommonHeader';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
-import { Actions } from 'react-native-router-flux';
+//グリッド表示用のライブラリのインポート宣言（NativeBaseのグリッドを使わない）
+import GridView from 'react-native-super-grid';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class PhotoGalleryContents extends Component {
@@ -57,7 +57,7 @@ class PhotoGalleryContents extends Component {
     ];
     return (
       <Container>
-        <CommonHeader title={"ああああ"} />
+        <CommonHeader title={"フォト一覧"} />
         <Content>
           <GridView
             itemWidth={130}
@@ -78,15 +78,6 @@ class PhotoGalleryContents extends Component {
 
 //このコンポーネントのスタイル設定
 const styles = {
-  headerBackStyle: {
-    backgroundColor: 'rgba(0, 0, 0, 0.85)',
-  },
-  backStyle: {
-    color: 'rgba(255, 255, 255, 1)',
-  },
-  titleStyle: {
-    color: 'rgba(255, 255, 255, 1)',
-  },
   gridView: {
     paddingTop: 10,
     flex: 1,
