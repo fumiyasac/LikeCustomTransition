@@ -30,6 +30,7 @@ import {
 
 //共通ヘッダーのインポート宣言
 import CommonHeader from './common/CommonHeader';
+//import CommonCampaignListItem from './common/CommonCampaignListItem';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class CampaignArchiveContents extends Component {
@@ -44,7 +45,7 @@ class CampaignArchiveContents extends Component {
       <Container>
         <CommonHeader title={"キャンペーン"} />
         <Content>
-          {/* モックなんであとで差し替える */}
+          {/* <CommonCampaignListItem campaign={campaign} /> */}
           <ListItem thumbnail>
             <Left>
               <Thumbnail square size={80} source={require('../assets/otsuka_sample.jpg')} />

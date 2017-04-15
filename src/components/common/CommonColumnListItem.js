@@ -24,7 +24,7 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 //一覧シンプルリスト表示用のベースコンポーネントの内容を定義する
-const CommonCampaignListItem = ({ campaign }) => {
+const CommonColumnListItem = ({ campaign }) => {
 
   //取得した引数（オブジェクト：{ campaign }）を分割する
   const { id, title, catchcopy, image_url, status } = campaign;
@@ -58,4 +58,4 @@ const CommonCampaignListItem = ({ campaign }) => {
 const styles = {};
 
 //このコンポーネントをインポート可能にする
-export default CommonCampaignListItem;
+export default CommonColumnListItem;
