@@ -34,7 +34,7 @@ const {
 //コンポーネントの内容を定義する ※ ClassComponent
 class SideContents extends Component {
 
-  //このコンポーネントのpropTypes(this.propsで受け取れる情報に関するもの)定義
+  //このコンポーネントのpropTypesの定義（this.propsで受け取れる情報に関するもの）
   static propTypes = {
     closeDrawer: PropTypes.func.isRequired,
   };

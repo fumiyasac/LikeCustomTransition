@@ -142,9 +142,6 @@ class BaseContents extends Component {
             <Title style={styles.titleStyle}>{this.onTitleSelected(this.state.itemSelected)}</Title>
           </Body>
           <Right>
-            <Button transparent onPress={ () => Actions.SearchShopContents() }>
-              <Icon style={styles.searchStyle} name="search" />
-            </Button>
           </Right>
         </Header>
         <Container>

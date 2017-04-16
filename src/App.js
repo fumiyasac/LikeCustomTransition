@@ -14,10 +14,8 @@ import { Router, Scene, Actions } from 'react-native-router-flux';
 //自作コンポーネント
 import BaseContents from './components/BaseContents';
 import ShopDetailContents from './components/ShopDetailContents';
-import SearchShopContents from './components/SearchShopContents';
 import PhotoGalleryContents from './components/PhotoGalleryContents';
 import ColumnDetailContents from './components/ColumnDetailContents';
-import CampaignArchiveContents from './components/CampaignArchiveContents';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class App extends Component {
@@ -25,7 +23,7 @@ class App extends Component {
   //各種ルーティングに対応するコンポーネントの内容をレンダリングする
   /**
    * Memo:
-   *
+   * モーダルのような遷移をする場合は「direction="vertical"」を属性に設定する。
    */
   render() {
     return (
@@ -34,9 +32,7 @@ class App extends Component {
           <Scene key="BaseContents" initial={true} component={BaseContents} hideNavBar={true} />
           <Scene key="ShopDetailContents" component={ShopDetailContents} hideNavBar={true} />
           <Scene key="ColumnDetailContents" component={ColumnDetailContents} hideNavBar={true} />
-          <Scene key="CampaignArchiveContents" component={CampaignArchiveContents} hideNavBar={true} />
           <Scene key="PhotoGalleryContents" component={PhotoGalleryContents} hideNavBar={true} />
-          <Scene key="SearchShopContents" direction="vertical" component={SearchShopContents} hideNavBar={true} />
         </Scene>
       </Router>
     );

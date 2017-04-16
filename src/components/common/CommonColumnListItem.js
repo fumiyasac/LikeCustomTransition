@@ -27,7 +27,7 @@ import { Actions } from 'react-native-router-flux';
 const CommonColumnListItem = ({ campaign }) => {
 
   //取得した引数（オブジェクト：{ campaign }）を分割する
-  const { id, title, catchcopy, image_url, status } = campaign;
+  const { id, title, catchcopy, image_url } = campaign;
 
   //表示する要素を返す
   return (
@@ -40,15 +40,9 @@ const CommonColumnListItem = ({ campaign }) => {
         <Text note>{catchcopy}</Text>
       </Body>
       <Right>
-        (status ? (
-          <Button transparent onPress={ () => console.log("Display Campaign QR Code.") }>
-            <Text>詳細</Text>
-          </Button>
-        ) : (
-          <Button transparent>
-            <Text>終了</Text>
-          </Button>
-        ))
+        <Button transparent onPress={ () => console.log("Display Campaign QR Code.") }>
+          <Text>詳細</Text>
+        </Button>
       </Right>
     </ListItem>
   );

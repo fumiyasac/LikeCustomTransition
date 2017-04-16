@@ -1,5 +1,6 @@
 /**
- * カテゴリー別のコラム一覧画面を表示するコンポーネント
+ * [WIP]
+ * コラム詳細画面を表示するコンポーネント
  */
 import React, {
   Component
@@ -42,14 +43,14 @@ class ColumnDetailContents extends Component {
             windowHeight={300}
             header={(
               <Text>
-                test
+                Test
               </Text>
             )}
             scrollableViewStyle={{ backgroundColor: 'red' }}
           >
           <View>
             <Text>
-              test
+              Test
             </Text>
           </View>
           </ParallaxView>
@@ -60,8 +61,7 @@ class ColumnDetailContents extends Component {
 }
 
 //このコンポーネントのスタイル設定
-const styles = {
-};
+const styles = {};
 
 //このコンポーネントをインポート可能にする
 export default ColumnDetailContents;

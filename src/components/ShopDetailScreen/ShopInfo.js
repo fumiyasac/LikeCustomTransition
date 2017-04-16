@@ -48,6 +48,11 @@ const {
   height: DEVICE_HEIGHT
 } = Dimensions.get('window');
 
+//ギャラリーの幅と高さの設定
+const mainAreaWidth = DEVICE_WIDTH - 120;
+const mainAreaHeight = 120 * 2;
+const subAreaRect = 120;
+
 //react-native-router-fluxのインポート宣言(Actionを使用)
 import { Actions } from 'react-native-router-flux';
 
@@ -69,14 +74,14 @@ class ShopInfo extends Component {
               <Content>
                 <ListItem avatar>
                   <Left>
-                    <Thumbnail source={require('../../assets/otsuka_sample.jpg')} />
+                    <Thumbnail source={require('../../assets/sample_avatar.jpg')} />
                   </Left>
                   <Body>
-                    <Text>タイトルが入ります。</Text>
-                    <Text style={styles.commentTextStyle} note>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</Text>
+                    <Text>Shisui deux</Text>
+                    <Text style={styles.commentTextStyle} note>美味しい料理と賑やかなエンターテイメントのコラボレーションが楽しめる大塚の新しい名物店。</Text>
                   </Body>
                   <Right>
-                    <Text style={styles.genreTextStyle} note>ラーメン</Text>
+                    <Text style={styles.genreTextStyle} note>イタリアン</Text>
                   </Right>
                 </ListItem>
               </Content>
@@ -85,15 +90,15 @@ class ShopInfo extends Component {
             <View>
               <Content>
                 <Grid>
-                  <Col style={{ backgroundColor: '#635DB7', width: DEVICE_WIDTH - 120, height: 240 }}>
-                    <Text>1</Text>
+                  <Col style={styles.firstImageStyle}>
+                    <Image style={styles.firstImageStyle} source={require('../../assets/detail1.jpg')} />
                   </Col>
                   <Col>
-                    <Row style={{ backgroundColor: '#00CE9F', width: 120, height: 120 }}>
-                      <Text>2</Text>
+                    <Row style={styles.secondImageStyle}>
+                      <Image style={styles.secondImageStyle} source={require('../../assets/detail2.jpg')} />
                     </Row>
-                    <Row style={{ backgroundColor: '#00DD9F', width: 120, height: 120 }}>
-                      <Text>3</Text>
+                    <Row style={styles.thirdImageStyle}>
+                      <Image style={styles.thirdImageStyle} source={require('../../assets/detail3.jpg')} />
                     </Row>
                   </Col>
                 </Grid>
@@ -104,45 +109,56 @@ class ShopInfo extends Component {
               <ListItem itemDivider>
                 <Text>お店の説明</Text>
               </ListItem>
-              <Text style={styles.textDetailStyle}>歴史がありながらも最近の発展やまちづくりにも目覚ましい下町情緒が溢れるあたたかな街、大塚。オフィス街・地域のお祭り・ライブハウス・隠れ家的な名店等、様々な表情をこの街は見せてくれます。</Text>
+              <Text style={styles.textDetailStyle}>
+                大塚に新たにできたイタリアンと創作料理のお店「Shisui deux」はお料理だけでなくエンターテイメントも充実した名スポット。
+                美味しいお料理やお酒を楽しむと共に「Tokyo Rouge」の素敵なイベントも開催しているので、是非お店のお近くをお通りの際はお立ち寄り下さい(^^)
+              </Text>
             </View>
             {/* 4. お店の情報 */}
-            <View style={{ backgroundColor: '#999999', width: DEVICE_WIDTH, height: 120 }}>
+            <View>
               {/* この辺は項目考えて入れる */}
-              <Button transparent onPress={ () => Actions.PhotoGalleryContents() }>
-                <Icon name='arrow-back' />
-              </Button>
+              <Content>
+                <Button dark full onPress={ () => Actions.PhotoGalleryContents() }>
+                  <Text>フォトギャラリー</Text>
+                </Button>
+              </Content>
             </View>
             <View>
               <ListItem itemDivider>
-                <Text>ああああああ</Text>
+                <Text>お店の情報</Text>
               </ListItem>
               <ListItem>
-                <Text>Simon Mignolet</Text>
+                <Text>住所</Text>
                 <Right>
-                  <Text note>ああああああああ</Text>
+                  <Text note>東京都豊島区南大塚1-60-20</Text>
+                </Right>
+              </ListItem>
+              <ListItem>
+                <Text>建物名</Text>
+                <Right>
+                  <Text note>天翔大塚駅前ビル B1F</Text>
                 </Right>
               </ListItem>
             </View>
             {/* 5. サブメニュー */}
             <View>
               <ListItem itemDivider>
-                <Text>その他情報へのリンク</Text>
+                <Text>その他情報</Text>
               </ListItem>
               <ListItem bordered>
-                <Text>食べログへのリンク</Text>
+                <Text>食べログ</Text>
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
               </ListItem>
               <ListItem>
-                <Text>HotPepperへのリンク</Text>
+                <Text>HotPepper</Text>
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
               </ListItem>
               <ListItem>
-                <Text>ぐるなびへのリンク</Text>
+                <Text>ぐるなび</Text>
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
@@ -181,6 +197,18 @@ const styles = {
     marginLeft: 16,
     marginRight: 16,
     lineHeight: 18,
+  },
+  firstImageStyle: {
+    width: mainAreaWidth,
+    height: mainAreaHeight,
+  },
+  secondImageStyle: {
+    width: subAreaRect,
+    height: subAreaRect,
+  },
+  thirdImageStyle: {
+    width: subAreaRect,
+    height: subAreaRect,
   },
 };
 
