@@ -32,27 +32,27 @@ class ShopList extends Component {
     super(props);
 
     //ステートの初期化を行う
-    this.state = { albums: [], isLoading: true, isError: false, modalVisible: false };
+    this.state = { shops: [], isLoading: true, isError: false, modalVisible: false };
   }
 
   //ショップデータをフェッチする
   fetchShopData() {
     //Memo: 自作APIとバインドする（ここはRails4.1.7で構築）
     axios.get('https://immense-journey-38002.herokuapp.com/articles.json')
-    .then(response => this.setState({ albums: response.data.article.contents, isLoading: false }))
-    .catch(error => this.setState({ albums: [], isLoading: false, isError: true }));
+    .then(response => this.setState({ shops: response.data.article.contents, isLoading: false }))
+    .catch(error => this.setState({ shops: [], isLoading: false, isError: true }));
   }
 
   //ショップデータの再読み込みを行う
   reloadShops() {
-    this.state = { albums: [], isLoading: true, isError: false };
+    this.state = { shops: [], isLoading: true, isError: false };
     this.fetchShopData();
   }
 
   //ショップデータのレンダリングを行う
   renderShops() {
-    return this.state.albums.map(album =>
-      <CommonCard key={album.id} album={album} />
+    return this.state.shops.map(shop =>
+      <CommonCard key={shop.id} shop={shop} />
     );
   }
 

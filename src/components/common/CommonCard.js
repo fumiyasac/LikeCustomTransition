@@ -29,7 +29,8 @@ import { Actions } from 'react-native-router-flux';
 const CommonCard = ({ shop }) => {
 
   //取得した引数（オブジェクト：{ shop }）を分割する
-  const { id, title, category, catch, detail, image_url } = shop;
+  const { id, title, category, image_url } = shop;
+  //const { id, title, category, kcpy, detail, image_url } = shop;
 
   //表示する要素を返す
   return (
