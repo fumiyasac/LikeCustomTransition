@@ -23,8 +23,7 @@ import {
 
 //幅と高さを取得する
 const {
-  width: DEVICE_WIDTH,
-  height: DEVICE_HEIGHT
+  width: DEVICE_WIDTH
 } = Dimensions.get('window');
 
 //共通ヘッダーのインポート宣言
@@ -58,11 +57,11 @@ class PhotoGalleryContents extends Component {
           <GridView
             itemWidth={130}
             items={galleryItems}
-            style={styles.gridView}
+            style={styles.gridViewStyle}
             renderItem={ item => (
-              <Image style={styles.itemContainer} source={{ uri: item.gallery }}>
-                <Text style={styles.itemName}>{item.name}</Text>
-                <Text style={styles.itemDate}>{item.date}</Text>
+              <Image style={styles.itemContainerStyle} source={{ uri: item.gallery }}>
+                <Text style={styles.itemNameStyle}>{item.name}</Text>
+                <Text style={styles.itemDateStyle}>{item.date}</Text>
               </Image>
             ) }
           />
@@ -74,23 +73,23 @@ class PhotoGalleryContents extends Component {
 
 //このコンポーネントのスタイル設定
 const styles = {
-  gridView: {
+  gridViewStyle: {
     paddingTop: 10,
     flex: 1,
   },
-  itemContainer: {
+  itemContainerStyle: {
     justifyContent: 'flex-end',
     borderRadius: 5,
     padding: 10,
     height: 150,
     width: DEVICE_WIDTH / 2 - 15,
   },
-  itemName: {
+  itemNameStyle: {
     fontSize: 16,
     color: '#fff',
     fontWeight: '600',
   },
-  itemDate: {
+  itemDateStyle: {
     fontWeight: '600',
     fontSize: 12,
     color: '#fff',

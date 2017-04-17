@@ -7,10 +7,8 @@ import React, {
 
 //ReactNativeを使用したコンポーネントの呼び出し
 import {
-  TouchableWithoutFeedback,
   ScrollView,
   View,
-  Image,
   Dimensions
 } from 'react-native';
 
@@ -35,13 +33,13 @@ import { Actions } from 'react-native-router-flux';
 //react-native-snap-carouselのインポート宣言
 import Carousel from 'react-native-snap-carousel';
 
-//HTTP通信用のライブラリ'axios'のインポート宣言
-import axios from 'axios';
+//コラム一覧表示の共通コンポーネントのインポート宣言
+import CommonSliderItem from '../common/CommonSliderItem';
+import CommonColumnListItem from '../common/CommonColumnListItem';
 
 //デバイスのサイズ取得
 const {
   width: DEVICE_WIDTH,
-  height: DEVICE_HEIGHT
 } = Dimensions.get('window');
 
 //ギャラリーの幅と高さの設定
@@ -49,27 +47,42 @@ const sliderWidth = DEVICE_WIDTH;
 const sliderHeight = DEVICE_WIDTH / 2;
 
 //データスタブ
-const columnItems = [
+const sliderItems = [
   {
     title: 'コラムタイトル1',
-    illustration: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column1.jpg'
+    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column1.jpg'
   },
   {
     title: 'コラムタイトル2',
-    illustration: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column2.jpg'
+    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column2.jpg'
   },
   {
     title: 'コラムタイトル3',
-    illustration: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column3.jpg'
+    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column3.jpg'
   },
   {
     title: 'コラムタイトル4',
-    illustration: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column4.jpg'
+    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column4.jpg'
   },
   {
     title: 'コラムタイトル5',
-    illustration: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column5.jpg'
+    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column5.jpg'
   }
+];
+
+const archiveItems = [
+  {
+    id: 1,
+    title: 'パスタのお店',
+    catchcopy: '美味しいパスタを楽しむことができます。',
+    image_url: require('../../assets/pasta_sample.jpg'),
+  },
+  {
+    id: 2,
+    title: 'ワインのお店',
+    catchcopy: '美味しいワインを楽しむことができます。',
+    image_url: require('../../assets/wine_sample.jpg'),
+  },
 ];
 
 //コンポーネントの内容を定義する ※ ClassComponent
@@ -77,17 +90,18 @@ class ColumnList extends Component {
 
   //スライド用のコンポーネントを組み立てる処理
   _getSlides () {
-    return columnItems.map((entry, index) => {
+    return sliderItems.map((slider, index) => {
       return (
-        <View key={index} style={styles.slideThumbnailContainerStyle}>
-          <Image style={styles.slideThumbnailStyle} source={{ uri: entry.illustration }} />
-          <TouchableWithoutFeedback onPress={ () => console.log("Detail Contents is WIP.") /*Actions.ColumnDetailContents()*/ }>
-            <View style={styles.overlayStyle}>
-              <Text style={styles.overlayTitleStyle}>{entry.title}</Text>
-              <Text style={styles.overlayCategoryStyle}>▶︎ 記事詳細へ</Text>
-            </View>
-          </TouchableWithoutFeedback>
-        </View>
+        <CommonSliderItem key={index} slider={slider} />
+      );
+    });
+  }
+
+  //リスト用のコンポーネントを組み立てる処理
+  _getArchives () {
+    return archiveItems.map((archive, index) => {
+      return (
+        <CommonColumnListItem key={index} archive={archive} />
       );
     });
   }
@@ -96,6 +110,7 @@ class ColumnList extends Component {
   render() {
     return (
       <Container style={styles.backgroundContainer}>
+        {/* 1. スライドメニュー */}
         <View style={styles.containerWrappedViewStyle}>
           <Carousel
             ref={(carousel) => { this._carousel = carousel; }}　
@@ -114,39 +129,14 @@ class ColumnList extends Component {
             {this._getSlides()}
           </Carousel>
         </View>
+        {/* 2. アーカイブ部分 */}
         <ScrollView>
           <Content>
             <Separator bordered>
               <Text>過去のアーカイブ</Text>
             </Separator>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square size={80} source={require('../../assets/wine_sample.jpg')} />
-              </Left>
-              <Body>
-                <Text>ワインのお店</Text>
-                <Text note>美味しいワインを楽しむことができます。</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={ () => console.log("Detail Contents is WIP.") /*Actions.ColumnDetailContents()*/ }>
-                  <Text>More</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square size={80} source={require('../../assets/pasta_sample.jpg')} />
-              </Left>
-              <Body>
-                <Text>パスタのお店</Text>
-                <Text note>美味しいパスタを楽しむことができます。</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={ () => console.log("Detail Contents is WIP.") /*Actions.ColumnDetailContents()*/ }>
-                  <Text>More</Text>
-                </Button>
-              </Right>
-            </ListItem>
+            {/* アーカイブ用のコンテンツを表示する */}
+            {this._getArchives()}
           </Content>
           <Separator bordered>
             <Text>コラムについて</Text>
@@ -177,37 +167,6 @@ const styles = {
     fontSize: 13,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#fff',
-  },
-  slideThumbnailContainerStyle: {
-    height: sliderHeight,
-    backgroundColor: '#F5FCFF',
-    position: 'relative',
-  },
-  slideThumbnailStyle: {
-    width: sliderWidth,
-    height: sliderHeight,
-    backgroundColor: '#eee',
-  },
-  overlayStyle: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 24,
-    paddingBottom: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-  },
-  overlayTitleStyle: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  overlayCategoryStyle: {
-    marginTop: 5,
-    fontSize: 12,
     color: '#fff',
   },
   containerWrappedViewStyle: {

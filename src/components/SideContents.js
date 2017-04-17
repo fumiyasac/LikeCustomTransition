@@ -55,6 +55,7 @@ class SideContents extends Component {
           </View>
         </View>
         <Content>
+          {/* ドロワーメニューでのメニュー部分（コンポーネント表示切り替え） */}
           <Separator bordered>
             <Text>コンテンツ</Text>
           </Separator>
@@ -70,6 +71,7 @@ class SideContents extends Component {
             <Icon ios='ios-cart' android="md-cart" style={{color: '#ff3333'}}/>
             <Text style={styles.menuTextStyle}>Myお買い物</Text>
           </ListItem>
+          {/* ドロワーメニューでのメニュー部分（WebViewでの表示） */}
           <Separator bordered>
             <Text>このサンプルに関して</Text>
           </Separator>

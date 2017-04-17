@@ -26,10 +26,10 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 //一覧情報表示用のベースコンポーネントの内容を定義する
-const CommonCard = ({ album }) => {
+const CommonCard = ({ shop }) => {
 
-  //取得した引数（オブジェクト：{ album }）を分割する
-  const { id, title, category, image_url } = album;
+  //取得した引数（オブジェクト：{ shop }）を分割する
+  const { id, title, category, catch, detail, image_url } = shop;
 
   //表示する要素を返す
   return (
@@ -38,7 +38,7 @@ const CommonCard = ({ album }) => {
         <CardItem>
           <Body>
             <Text>{title}</Text>
-            <Text style={styles.noteStyle} note>写真番号：No.{id} ({category})</Text>
+            <Text style={styles.noteStyle} note>{category}</Text>
           </Body>
         </CardItem>
         <CardItem cardBody>
@@ -48,7 +48,7 @@ const CommonCard = ({ album }) => {
           <Text style={styles.cardContentTextStyle}>このAPIから表示しているものはサンプルになります。後々に差し替えを行う予定ですので、申し訳ありませんがしばしお待ちくださいませ。</Text>
         </CardItem>
         <CardItem style={styles.cardBottomStyle}>
-          <Text style={styles.cardBottomTextStyle}>更新日：2017/04/03</Text>
+          <Text style={styles.cardBottomTextStyle}>更新日：2017/04/17</Text>
           <Button onPress={ () => Actions.ShopDetailContents({id: id, title: "お店詳細"}) } transparent>
             <Icon active name="chatbubbles" />
             <Text style={styles.cardBottomTextStyle}>詳細情報を見る</Text>
@@ -67,7 +67,7 @@ const styles = {
   imageStyle: {
     marginLeft: 15,
     marginRight: 15,
-    height: 300,
+    height: 240,
     flex: 1
   },
   cardContentTextStyle: {

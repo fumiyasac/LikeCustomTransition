@@ -4,9 +4,7 @@
 import React from 'react';
 
 //ReactNativeを使用したコンポーネントの呼び出し
-import {
-  StyleSheet
-} from 'react-native';
+import {} from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
 import {
@@ -16,7 +14,6 @@ import {
   Right,
   Text,
   Button,
-  Icon,
   Thumbnail
 } from 'native-base';
 
@@ -24,32 +21,29 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 //一覧シンプルリスト表示用のベースコンポーネントの内容を定義する
-const CommonColumnListItem = ({ campaign }) => {
+const CommonColumnListItem = ({ archive }) => {
 
-  //取得した引数（オブジェクト：{ campaign }）を分割する
-  const { id, title, catchcopy, image_url } = campaign;
+  //取得した引数（オブジェクト：{ archive }）を分割する
+  const { id, title, catchcopy, image_url } = archive;
 
   //表示する要素を返す
   return (
     <ListItem thumbnail>
       <Left>
-        <Thumbnail square size={80} source={require('../assets/otsuka_sample.jpg')} />
+        <Thumbnail square size={80} source={image_url} />
       </Left>
       <Body>
         <Text>{title}</Text>
         <Text note>{catchcopy}</Text>
       </Body>
       <Right>
-        <Button transparent onPress={ () => console.log("Display Campaign QR Code.") }>
+        <Button transparent onPress={ () => console.log("Work In Progress.") }>
           <Text>詳細</Text>
         </Button>
       </Right>
     </ListItem>
   );
 };
-
-//このコンポーネントのStyle定義
-const styles = {};
 
 //このコンポーネントをインポート可能にする
 export default CommonColumnListItem;
