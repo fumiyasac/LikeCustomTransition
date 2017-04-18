@@ -10,12 +10,8 @@ import {
   View,
   Image,
   Dimensions,
-} from 'react-native';
-
-//NativeBaseを使用したコンポーネントの呼び出し
-import {
   Text,
-} from 'native-base';
+} from 'react-native';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)
 import { Actions } from 'react-native-router-flux';

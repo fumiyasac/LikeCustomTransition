@@ -3,9 +3,6 @@
  */
 import React from 'react';
 
-//ReactNativeを使用したコンポーネントの呼び出し
-import {} from 'react-native';
-
 //NativeBaseを使用したコンポーネントの呼び出し
 import {
   ListItem,

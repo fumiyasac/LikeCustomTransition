@@ -16,13 +16,6 @@ import {
 import {
   Container,
   Content,
-  Spinner,
-  Button,
-  ListItem,
-  Left,
-  Body,
-  Right,
-  Thumbnail,
   Separator,
   Text,
 } from 'native-base';
@@ -37,6 +30,9 @@ import Carousel from 'react-native-snap-carousel';
 import CommonSliderItem from '../common/CommonSliderItem';
 import CommonColumnListItem from '../common/CommonColumnListItem';
 
+//表示データの読み込み
+import { getSliderList, getArchiveList } from '../../stub/SampleDataStub';
+
 //デバイスのサイズ取得
 const {
   width: DEVICE_WIDTH,
@@ -46,51 +42,12 @@ const {
 const sliderWidth = DEVICE_WIDTH;
 const sliderHeight = DEVICE_WIDTH / 2;
 
-//データスタブ
-const sliderItems = [
-  {
-    title: 'コラムタイトル1',
-    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column1.jpg'
-  },
-  {
-    title: 'コラムタイトル2',
-    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column2.jpg'
-  },
-  {
-    title: 'コラムタイトル3',
-    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column3.jpg'
-  },
-  {
-    title: 'コラムタイトル4',
-    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column4.jpg'
-  },
-  {
-    title: 'コラムタイトル5',
-    image_url: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column5.jpg'
-  }
-];
-
-const archiveItems = [
-  {
-    id: 1,
-    title: 'パスタのお店',
-    catchcopy: '美味しいパスタを楽しむことができます。',
-    image_url: require('../../assets/pasta_sample.jpg'),
-  },
-  {
-    id: 2,
-    title: 'ワインのお店',
-    catchcopy: '美味しいワインを楽しむことができます。',
-    image_url: require('../../assets/wine_sample.jpg'),
-  },
-];
-
 //コンポーネントの内容を定義する ※ ClassComponent
 class ColumnList extends Component {
 
   //スライド用のコンポーネントを組み立てる処理
   _getSlides () {
-    return sliderItems.map((slider, index) => {
+    return getSliderList().map((slider, index) => {
       return (
         <CommonSliderItem key={index} slider={slider} />
       );
@@ -99,7 +56,7 @@ class ColumnList extends Component {
 
   //リスト用のコンポーネントを組み立てる処理
   _getArchives () {
-    return archiveItems.map((archive, index) => {
+    return getArchiveList().map((archive, index) => {
       return (
         <CommonColumnListItem key={index} archive={archive} />
       );
@@ -141,7 +98,10 @@ class ColumnList extends Component {
           <Separator bordered>
             <Text>コラムについて</Text>
           </Separator>
-          <Text style={styles.backgroundDescription}>歴史がありながらも最近の発展やまちづくりにも目覚ましい下町情緒が溢れるあたたかな街、大塚。オフィス街・地域のお祭り・ライブハウス・隠れ家的な名店等、様々な表情をこの街は見せてくれます。</Text>
+          <Text style={styles.backgroundDescription}>
+            歴史がありながらも最近の発展やまちづくりにも目覚ましい下町情緒が溢れるあたたかな街、大塚。
+            オフィス街・地域のお祭り・ライブハウス・隠れ家的な名店等、様々な表情をこの街は見せてくれます。
+          </Text>
         </ScrollView>
       </Container>
     );

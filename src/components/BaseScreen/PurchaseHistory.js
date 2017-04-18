@@ -8,31 +8,22 @@ import React, {
 //ReactNativeを使用したコンポーネントの呼び出し
 import {
   StyleSheet,
-  View
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
 import {
   Container,
   Content,
-  Header,
-  Left,
-  Right,
-  Title,
-  Body,
-  Button,
-  List,
-  ListItem,
-  Thumbnail,
-  Icon,
-  Text
 } from 'native-base';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)
 import { Actions } from 'react-native-router-flux';
 
-//タイムライン表示用の
+//react-native-timeline-listviewのインポート宣言
 import Timeline from 'react-native-timeline-listview';
+
+//表示データの読み込み
+import { getPurchaseHistory } from '../../stub/SampleDataStub';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class PurchaseHistory extends Component {
@@ -43,22 +34,15 @@ class PurchaseHistory extends Component {
    *
    */
   render() {
-    //データスタブ
-    const timelineItems = [
-      { time: '2017.04.16', title: 'スーパーLIFEでお買い物をしました。', description: '日用品とか食器とかを¥5000程度のお買い物をしました。' },
-      { time: '2017.04.16', title: 'ランニング中に缶ジュースを購入しました。', description: 'さくっとカルピスウォーターを¥140で！自動販売機でざっくりとな。' },
-      { time: '2017.04.16', title: 'お昼にカツ丼を食べました。', description: '散歩中に近所で見つけたお店でカツ丼を¥860でボリュームゴツすぎ！' },
-      { time: '2017.04.16', title: 'マルエツでお買い物をしました。', description: '今日は牛肉と野菜の炒め物を作りたかったので、中華の食材をはじめ¥5000ほどを使った！' },
-    ];
     //コンポーネントのレンダリング
     return (
-      <Container>
+      <Container style={styles.backgroundContainer}>
         <Content style={styles.backgroundDescription}>
           <Timeline
             innerCircle={'dot'}
             timeStyle={styles.timeStyle}
             descriptionStyle={styles.descriptionStyle}
-            data={timelineItems}
+            data={getPurchaseHistory()}
             />
         </Content>
       </Container>
@@ -68,6 +52,9 @@ class PurchaseHistory extends Component {
 
 //このコンポーネントのスタイル設定
 const styles = {
+  backgroundContainer: {
+    backgroundColor: '#fff',
+  },
   backgroundDescription: {
     paddingTop: 16,
     paddingLeft: 16,

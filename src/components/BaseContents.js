@@ -10,7 +10,8 @@ import {
  StyleSheet,
  Text,
  View,
- WebView
+ WebView,
+ Platform
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
@@ -60,7 +61,7 @@ class BaseContents extends Component {
   };
 
   //ドロワーメニューに対応したシーンの切り替えをする
-  onItemSelected = (selected) => {
+  _onItemSelected = (selected) => {
     switch (selected) {
       case "ShopList":
         return <ShopList />
@@ -78,7 +79,7 @@ class BaseContents extends Component {
   };
 
   //ドロワーメニューに対応したタイトルの切り替えをする
-  onTitleSelected = (selected) => {
+  _onTitleSelected = (selected) => {
     switch (selected) {
       case "ShopList":
         return "紹介お店一覧"
@@ -106,7 +107,7 @@ class BaseContents extends Component {
     return (
       <Drawer
         ref={ (ref) => this._drawer = ref }
-        type="overlay"
+        type={(Platform.OS === 'ios') ? "static" : "overlay"}
         content={
           <SideContents closeDrawer={this.closeDrawer} />
         }
@@ -139,13 +140,13 @@ class BaseContents extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={styles.titleStyle}>{this.onTitleSelected(this.state.itemSelected)}</Title>
+            <Title style={styles.titleStyle}>{this._onTitleSelected(this.state.itemSelected)}</Title>
           </Body>
           <Right>
           </Right>
         </Header>
         <Container>
-          {this.onItemSelected(this.state.itemSelected)}
+          {this._onItemSelected(this.state.itemSelected)}
         </Container>
       </Drawer>
     );
@@ -155,20 +156,20 @@ class BaseContents extends Component {
 //このコンポーネントのスタイル設定
 const styles = {
   headerBackStyle: {
-    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+    backgroundColor: '#000',
   },
   titleStyle: {
-    color: 'rgba(255, 255, 255, 1)',
+    color: '#fff',
   },
   searchStyle: {
-    color: 'rgba(255, 255, 255, 1)',
+    color: '#fff',
   },
   subTitleStyle: {
-    color: 'rgba(255, 255, 255, 1)',
+    color: '#fff',
     fontSize: 11,
   },
   menuStyle: {
-    color: 'rgba(255, 255, 255, 1)',
+    color: '#fff',
   },
 };
 

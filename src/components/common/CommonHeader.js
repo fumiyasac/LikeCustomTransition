@@ -5,7 +5,7 @@ import React from 'react';
 
 //ReactNativeを使用したコンポーネントの呼び出し
 import {
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 
 //NativeBaseを使用したコンポーネントの呼び出し
@@ -14,7 +14,6 @@ import {
   Left,
   Right,
   Body,
-  Text,
   Title,
   Button,
   Icon,
@@ -37,8 +36,7 @@ const CommonHeader = ({ title, icon }) => {
       <Body>
         <Title style={styles.titleStyle}>{title}</Title>
       </Body>
-      <Right>
-      </Right>
+      <Right />
     </Header>
   );
 };
@@ -46,13 +44,13 @@ const CommonHeader = ({ title, icon }) => {
 //このコンポーネントのStyle定義
 const styles = {
   headerBackStyle: {
-    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+    backgroundColor: '#000',
   },
   backStyle: {
-    color: 'rgba(255, 255, 255, 1)',
+    color: '#fff',
   },
   titleStyle: {
-    color: 'rgba(255, 255, 255, 1)',
+    color: '#fff',
   },
 };
 

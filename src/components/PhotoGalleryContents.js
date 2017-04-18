@@ -26,11 +26,17 @@ const {
   width: DEVICE_WIDTH
 } = Dimensions.get('window');
 
+//グリッドの幅調整用の値
+const gridWidth = DEVICE_WIDTH / 2 - 15;
+
 //共通ヘッダーのインポート宣言
 import CommonHeader from './common/CommonHeader';
 
 //グリッド表示用のライブラリのインポート宣言（NativeBaseのグリッドを使わない）
 import GridView from 'react-native-super-grid';
+
+//表示データの読み込み
+import { getGalleryList } from '../stub/SampleDataStub';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class PhotoGalleryContents extends Component {
@@ -41,13 +47,6 @@ class PhotoGalleryContents extends Component {
    *
    */
   render() {
-    //データスタブ
-    const galleryItems = [
-      { name: 'ギャラリー写真1', date: '2017.04.15', gallery: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/gallery/gallery1.jpg' },
-      { name: 'ギャラリー写真2', date: '2017.04.15', gallery: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/gallery/gallery2.jpg' },
-      { name: 'ギャラリー写真3', date: '2017.04.15', gallery: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/gallery/gallery3.jpg' },
-      { name: 'ギャラリー写真4', date: '2017.04.15', gallery: 'https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/gallery/gallery4.jpg' },
-    ];
     //コンポーネントのレンダリング
     return (
       <Container>
@@ -56,7 +55,7 @@ class PhotoGalleryContents extends Component {
           {/* iOSでのUICollectionViewの様なレイアウト */}
           <GridView
             itemWidth={130}
-            items={galleryItems}
+            items={getGalleryList()}
             style={styles.gridViewStyle}
             renderItem={ item => (
               <Image style={styles.itemContainerStyle} source={{ uri: item.gallery }}>
@@ -82,7 +81,7 @@ const styles = {
     borderRadius: 5,
     padding: 10,
     height: 150,
-    width: DEVICE_WIDTH / 2 - 15,
+    width: gridWidth,
   },
   itemNameStyle: {
     fontSize: 16,

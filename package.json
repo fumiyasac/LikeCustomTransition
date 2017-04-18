@@ -13,7 +13,6 @@
     "react-native": "0.42.3",
     "react-native-parallax-view": "^2.0.6",
     "react-native-router-flux": "^3.38.0",
-    "react-native-safari-view": "^2.0.0",
     "react-native-scrollable-tab-view": "^0.6.3",
     "react-native-snap-carousel": "^2.1.0",
     "react-native-super-grid": "^1.0.2",

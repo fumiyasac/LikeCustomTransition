@@ -10,7 +10,6 @@ import {
   StyleSheet,
   View,
   Image,
-  TouchableOpacity,
   ScrollView,
   Dimensions,
 } from 'react-native';
@@ -19,18 +18,14 @@ import {
 import {
   Container,
   Content,
-  Header,
   Left,
   Right,
-  Title,
   Body,
   Button,
   List,
   ListItem,
   Thumbnail,
   Icon,
-  CardItem,
-  Card,
   Item,
   Text
 } from 'native-base';

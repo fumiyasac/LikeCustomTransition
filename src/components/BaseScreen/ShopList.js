@@ -15,7 +15,7 @@ import {
 //NativeBaseを使用したコンポーネントの呼び出し
 import {
   Spinner,
-  Button
+  Button,
 } from 'native-base';
 
 //アルバム詳細用の共通コンポーネントのインポート宣言
@@ -89,7 +89,7 @@ class ShopList extends Component {
     }
 
     return (
-      <ScrollView>
+      <ScrollView style={styles.backgroundContainer}>
         {this.renderShops()}
       </ScrollView>
     );
@@ -98,8 +98,12 @@ class ShopList extends Component {
 
 //このコンポーネントのスタイル設定
 const styles = {
+  backgroundContainer: {
+    backgroundColor: '#fff',
+  },
   spinnerWrapperStyle: {
     flex: 1,
+    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
   },
