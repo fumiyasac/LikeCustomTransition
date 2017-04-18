@@ -1,0 +1,39 @@
+<%= form_for(@shop) do |f| %>
+  <% if @shop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
+
+      <ul>
+      <% @shop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :catch %><br>
+    <%= f.text_field :catch %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %><br>
+    <%= f.text_area :detail %>
+  </div>
+  <!-- 画像アップロード用のf.file_fieldを追記する -->
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

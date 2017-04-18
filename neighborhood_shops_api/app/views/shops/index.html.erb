@@ -1,0 +1,33 @@
+<h1>Listing shops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Catch</th>
+      <th>Detail</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shops.each do |shop| %>
+      <tr>
+        <td><%= shop.title %></td>
+        <td><%= shop.category %></td>
+        <td><%= shop.catch %></td>
+        <td><%= shop.detail %></td>
+        <td><%= image_tag(shop.image(:small)) %></td>
+        <td><%= link_to 'Show', shop %></td>
+        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
+        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shop', new_shop_path %>

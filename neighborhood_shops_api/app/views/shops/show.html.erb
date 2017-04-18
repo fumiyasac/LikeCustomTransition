@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @shop.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @shop.category %>
+</p>
+
+<p>
+  <strong>Catch:</strong>
+  <%= @shop.catch %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @shop.detail %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@shop.image(:medium)) %>
+</p>
+
+<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<%= link_to 'Back', shops_path %>
