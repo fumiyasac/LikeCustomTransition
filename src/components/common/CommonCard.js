@@ -29,8 +29,7 @@ import { Actions } from 'react-native-router-flux';
 const CommonCard = ({ shop }) => {
 
   //取得した引数（オブジェクト：{ shop }）を分割する
-  const { id, title, category, image_url } = shop;
-  //const { id, title, category, kcpy, detail, image_url } = shop;
+  const { id, title, category, kcpy, detail, image_url } = shop;
 
   //表示する要素を返す
   return (
@@ -39,14 +38,15 @@ const CommonCard = ({ shop }) => {
         <CardItem>
           <Body>
             <Text>{title}</Text>
-            <Text style={styles.noteStyle} note>{category}</Text>
+            <Text style={styles.noteStyle} note>カテゴリー：{category}</Text>
+            <Text note>{kcpy}</Text>
           </Body>
         </CardItem>
         <CardItem cardBody>
           <Image style={styles.imageStyle} source={{ uri: image_url }} />
         </CardItem>
         <CardItem content>
-          <Text style={styles.cardContentTextStyle}>このAPIから表示しているものはサンプルになります。後々に差し替えを行う予定ですので、申し訳ありませんがしばしお待ちくださいませ。</Text>
+          <Text style={styles.cardContentTextStyle}>{detail}</Text>
         </CardItem>
         <CardItem style={styles.cardBottomStyle}>
           <Text style={styles.cardBottomTextStyle}>更新日：2017/04/17</Text>

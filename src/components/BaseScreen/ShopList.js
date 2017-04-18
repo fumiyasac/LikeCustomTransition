@@ -38,8 +38,8 @@ class ShopList extends Component {
   //ショップデータをフェッチする
   fetchShopData() {
     //Memo: 自作APIとバインドする（ここはRails4.1.7で構築）
-    axios.get('https://immense-journey-38002.herokuapp.com/articles.json')
-    .then(response => this.setState({ shops: response.data.article.contents, isLoading: false }))
+    axios.get('https://rocky-dusk-33235.herokuapp.com/shops.json')
+    .then(response => this.setState({ shops: response.data.shops.contents, isLoading: false }))
     .catch(error => this.setState({ shops: [], isLoading: false, isError: true }));
   }
 
