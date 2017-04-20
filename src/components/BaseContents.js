@@ -70,9 +70,9 @@ class BaseContents extends Component {
       case "MyPurchase":
         return <PurchaseHistory />
       case "GithubLink":
-        return <WebView source={{uri: 'https://github.com/fumiyasac'}} />
+        return <WebView source={{uri: 'https://github.com/fumiyasac/LikeCustomTransition'}} />
       case "SlideshareLink":
-        return <WebView source={{uri: 'https://www.slideshare.net/fumiyasakai37'}} />
+        return <WebView source={{uri: 'https://www.slideshare.net/fumiyasakai37/nativebaseui'}} />
       default:
         return <ShopList />
     }
