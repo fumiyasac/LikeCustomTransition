@@ -15,7 +15,6 @@ import { Router, Scene, Actions } from 'react-native-router-flux';
 import BaseContents from './components/BaseContents';
 import ShopDetailContents from './components/ShopDetailContents';
 import PhotoGalleryContents from './components/PhotoGalleryContents';
-import ColumnDetailContents from './components/ColumnDetailContents';
 
 //コンポーネントの内容を定義する ※ ClassComponent
 class App extends Component {
@@ -31,7 +30,6 @@ class App extends Component {
         <Scene key="root">
           <Scene key="BaseContents" initial={true} component={BaseContents} hideNavBar={true} />
           <Scene key="ShopDetailContents" component={ShopDetailContents} hideNavBar={true} />
-          <Scene key="ColumnDetailContents" component={ColumnDetailContents} hideNavBar={true} />
           <Scene key="PhotoGalleryContents" component={PhotoGalleryContents} hideNavBar={true} />
         </Scene>
       </Router>
