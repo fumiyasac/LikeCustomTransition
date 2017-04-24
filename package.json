@@ -12,7 +12,7 @@
     "react": "16.0.0-alpha.6",
     "react-native": "^0.43.3",
     "react-native-parallax-view": "^2.0.6",
-    "react-native-router-flux": "^3.38.0",
+    "react-native-router-flux": "3.38.0",
     "react-native-scrollable-tab-view": "^0.6.3",
     "react-native-snap-carousel": "^2.1.0",
     "react-native-super-grid": "^1.0.2",
@@ -26,6 +26,8 @@
   },
   "jest": {
     "preset": "react-native",
-    "transformIgnorePatterns": ["/node_modules/(?!native-base)/"]
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base|react-native-router-flux)/"
+    ]
   }
 }
