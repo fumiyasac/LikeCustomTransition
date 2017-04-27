@@ -1,6 +1,7 @@
 /**
  * お買い物履歴を表示するコンポーネント
  */
+
 import React, {
   Component
 } from 'react';

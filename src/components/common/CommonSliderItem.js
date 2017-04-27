@@ -13,9 +13,6 @@ import {
   Text,
 } from 'react-native';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
-import { Actions } from 'react-native-router-flux';
-
 //デバイスのサイズ取得
 const {
   width: DEVICE_WIDTH,
@@ -26,7 +23,7 @@ const sliderWidth = DEVICE_WIDTH;
 const sliderHeight = DEVICE_WIDTH / 2;
 
 //一覧シンプルリスト表示用のベースコンポーネントの内容を定義する
-const CommonSliderItem = ({ slider }) => {
+const CommonSliderItem = ({ slider, onPress }) => {
 
   //取得した引数（オブジェクト：{ slider }）を分割する
   const { id, title, image_url } = slider;
@@ -35,7 +32,7 @@ const CommonSliderItem = ({ slider }) => {
   return (
     <View style={styles.slideThumbnailContainerStyle}>
       <Image style={styles.slideThumbnailStyle} source={{ uri: image_url }} />
-      <TouchableWithoutFeedback onPress={ () => console.log("Detail Contents is WIP.") }>
+      <TouchableWithoutFeedback onPress={onPress}>
         <View style={styles.overlayStyle}>
           <Text style={styles.overlayTitleStyle}>{title}</Text>
           <Text style={styles.overlayCategoryStyle}>▶︎ 記事詳細へ</Text>

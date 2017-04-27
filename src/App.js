@@ -1,6 +1,7 @@
 /**
  * アプリコンテンツ用のコンポーネント
  */
+
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -9,7 +10,7 @@ import {
 } from 'react-native';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)
-import { Router, Scene, Actions } from 'react-native-router-flux';
+import { Router, Scene } from 'react-native-router-flux';
 
 //自作コンポーネント
 import BaseContents from './components/BaseContents';

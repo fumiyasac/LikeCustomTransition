@@ -1,6 +1,7 @@
 /**
  * フォトギャラリー画面を表示するコンポーネント
  */
+
 import React, {
   Component
 } from 'react';
@@ -38,6 +39,9 @@ import GridView from 'react-native-super-grid';
 //表示データの読み込み
 import { getGalleryList } from '../stub/SampleDataStub';
 
+//react-native-router-fluxのインポート宣言(Actionを使用)
+import { Actions } from 'react-native-router-flux';
+
 //コンポーネントの内容を定義する ※ ClassComponent
 class PhotoGalleryContents extends Component {
 
@@ -50,7 +54,7 @@ class PhotoGalleryContents extends Component {
     //コンポーネントのレンダリング
     return (
       <Container>
-        <CommonHeader title={"フォト一覧"} />
+        <CommonHeader title={"フォト一覧"} onPress={ () => Actions.pop() } />
         <Content>
           {/* iOSでのUICollectionViewの様なレイアウト */}
           <GridView

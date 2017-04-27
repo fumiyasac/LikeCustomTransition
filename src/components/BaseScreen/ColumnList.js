@@ -1,6 +1,7 @@
 /**
  * コラム一覧ページを表示するコンポーネント
  */
+
 import React, {
   Component
 } from 'react';
@@ -46,19 +47,19 @@ const sliderHeight = DEVICE_WIDTH / 2;
 class ColumnList extends Component {
 
   //スライド用のコンポーネントを組み立てる処理
-  _getSlides () {
+  _getSlides() {
     return getSliderList().map((slider, index) => {
       return (
-        <CommonSliderItem key={index} slider={slider} />
+        <CommonSliderItem key={index} slider={slider} onPress={ () => console.log("_getSlides() : Work In Progress.") } />
       );
     });
   }
 
   //リスト用のコンポーネントを組み立てる処理
-  _getArchives () {
+  _getArchives() {
     return getArchiveList().map((archive, index) => {
       return (
-        <CommonColumnListItem key={index} archive={archive} />
+        <CommonColumnListItem key={index} archive={archive} onPress={ () => console.log("_getArchives() : Work In Progress.") } />
       );
     });
   }

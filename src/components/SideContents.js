@@ -1,10 +1,13 @@
 /**
  * サイドコンテンツ用のコンポーネント
  */
+
 import React, {
   Component,
   PropTypes
 } from 'react';
+
+//ReactNativeを使用したコンポーネントの呼び出し
 import {
   StyleSheet,
   ScrollView,

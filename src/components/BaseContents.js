@@ -1,6 +1,7 @@
 /**
  * ベースコンテンツ用のコンポーネント
  */
+
 import React, {
   Component,
   PropTypes
@@ -26,6 +27,9 @@ import {
   Button,
   Icon
 } from 'native-base';
+
+//ヘッダー用コンポーネントの宣言
+import CommonHeader from './common/CommonHeader';
 
 //ドロワー用コンポーネントの宣言
 import SideContents from './SideContents';
@@ -133,18 +137,7 @@ class BaseContents extends Component {
         panOpenMask={0.04}
         negotiatePan={true}
         >
-        <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
-          <Left>
-            <Button transparent onPress={ () => this.openDrawer() }>
-              <Icon style={styles.menuStyle} name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title style={styles.titleStyle}>{this._onTitleSelected(this.state.itemSelected)}</Title>
-          </Body>
-          <Right>
-          </Right>
-        </Header>
+        <CommonHeader title={this._onTitleSelected(this.state.itemSelected)} icon={"menu"} onPress={ () => this.openDrawer() } />
         <Container>
           {this._onItemSelected(this.state.itemSelected)}
         </Container>
@@ -153,7 +146,7 @@ class BaseContents extends Component {
   }
 }
 
-//このコンポーネントのスタイル設定
+//スタイル設定
 const styles = {
   headerBackStyle: {
     backgroundColor: '#000',

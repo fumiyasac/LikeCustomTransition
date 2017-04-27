@@ -1,0 +1,326 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`共通コンポーネント(店舗表示用部分)のスナップショットテスト 1`] = `
+<RCTScrollView
+  automaticallyAdjustContentInsets={false}
+  contentInset={
+    Object {
+      "bottom": 0,
+    }
+  }
+  enableAutoAutomaticScroll={true}
+  enableResetScrollToCoords={true}
+  extraHeight={75}
+  extraScrollHeight={0}
+  keyboardDismissMode="interactive"
+  onScroll={[Function]}
+  resetScrollToCoords={
+    Object {
+      "x": 0,
+      "y": 0,
+    }
+  }
+  scrollEventThrottle={0}
+  showsVerticalScrollIndicator={true}
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "flex": 1,
+    }
+  }
+  virtual={undefined}
+>
+  <View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "#ccc",
+          "borderRadius": 2,
+          "borderWidth": 0.5,
+          "elevation": 3,
+          "flex": 1,
+          "flexWrap": "wrap",
+          "marginBottom": 5,
+          "marginLeft": 2,
+          "marginRight": 2,
+          "marginTop": 5,
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 1.5,
+        }
+      }
+      virtual={undefined}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flexDirection": "row",
+            "paddingBottom": 10,
+            "paddingLeft": 15,
+            "paddingRight": 15,
+            "paddingTop": 10,
+          }
+        }
+        virtual={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "alignSelf": "stretch",
+              "flex": 1,
+            }
+          }
+          virtual={undefined}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#000",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "lineHeight": 20,
+              }
+            }
+            virtual={undefined}
+          >
+            大塚の油そば「麺屋 帝旺」
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            note={true}
+            style={
+              Object {
+                "color": "#808080",
+                "fontFamily": "System",
+                "fontSize": 14,
+                "fontWeight": "200",
+                "lineHeight": 20,
+                "marginRight": 20,
+                "marginTop": 5,
+              }
+            }
+            virtual={undefined}
+          >
+            カテゴリー：
+            ラーメン・油そば
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            note={true}
+            style={
+              Object {
+                "color": "#808080",
+                "fontFamily": "System",
+                "fontSize": 14,
+                "fontWeight": "200",
+                "lineHeight": 20,
+                "marginRight": 20,
+              }
+            }
+            virtual={undefined}
+          >
+            ピリ辛の特製ラー油がうまさの秘訣！
+          </Text>
+        </View>
+      </View>
+      <View
+        cardBody={true}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flexDirection": "row",
+            "paddingBottom": -5,
+            "paddingLeft": -5,
+            "paddingRight": -5,
+            "paddingTop": -5,
+          }
+        }
+        virtual={undefined}
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://otsuka-shop.s3-ap-northeast-1.amazonaws.com/shops/images/1/large.jpg",
+            }
+          }
+          style={
+            Object {
+              "flex": 1,
+              "height": 240,
+              "marginLeft": 15,
+              "marginRight": 15,
+            }
+          }
+        />
+      </View>
+      <View
+        content={true}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flexDirection": "row",
+            "paddingBottom": 10,
+            "paddingLeft": 15,
+            "paddingRight": 15,
+            "paddingTop": 10,
+          }
+        }
+        virtual={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#555",
+              "fontFamily": "System",
+              "fontSize": 14,
+              "lineHeight": 22,
+            }
+          }
+          virtual={undefined}
+        >
+          少しピリ辛のラー油と食べ応えのある太麺が一度食べるとやみつきになる一品です。
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+            "paddingBottom": 10,
+            "paddingLeft": 15,
+            "paddingRight": 15,
+            "paddingTop": 10,
+          }
+        }
+        virtual={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 13,
+            }
+          }
+          virtual={undefined}
+        >
+          更新日：2017/04/17
+        </Text>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "flex-start",
+              "backgroundColor": "transparent",
+              "borderColor": "#007aff",
+              "borderRadius": 5,
+              "borderWidth": null,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 45,
+              "justifyContent": "space-between",
+              "opacity": 1,
+              "paddingBottom": 6,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 6,
+              "shadowColor": null,
+              "shadowOffset": null,
+              "shadowOpacity": null,
+              "shadowRadius": null,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <Text
+            accessible={true}
+            active={true}
+            allowFontScaling={false}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": undefined,
+                  "fontSize": 12,
+                },
+                Object {
+                  "color": "#007aff",
+                  "fontSize": 24,
+                  "marginLeft": 5,
+                  "marginRight": 5,
+                  "paddingTop": 2,
+                },
+                Object {
+                  "fontFamily": "Ionicons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+              ]
+            }
+            virtual={undefined}
+          >
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#007aff",
+                "fontFamily": "System",
+                "fontSize": 13,
+                "lineHeight": 19,
+                "marginLeft": 0,
+                "marginRight": 0,
+              }
+            }
+            virtual={undefined}
+          >
+            詳細情報を見る
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

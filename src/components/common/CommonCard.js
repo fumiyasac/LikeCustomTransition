@@ -22,11 +22,8 @@ import {
   Thumbnail
 } from 'native-base';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
-import { Actions } from 'react-native-router-flux';
-
 //一覧情報表示用のベースコンポーネントの内容を定義する
-const CommonCard = ({ shop }) => {
+const CommonCard = ({ shop, onPress }) => {
 
   //取得した引数（オブジェクト：{ shop }）を分割する
   const { id, title, category, kcpy, detail, image_url } = shop;
@@ -50,7 +47,7 @@ const CommonCard = ({ shop }) => {
         </CardItem>
         <CardItem style={styles.cardBottomStyle}>
           <Text style={styles.cardBottomTextStyle}>更新日：2017/04/17</Text>
-          <Button onPress={ () => Actions.ShopDetailContents({id: id, title: "お店詳細"}) } transparent>
+          <Button onPress={onPress} transparent>
             <Icon active name="chatbubbles" />
             <Text style={styles.cardBottomTextStyle}>詳細情報を見る</Text>
           </Button>

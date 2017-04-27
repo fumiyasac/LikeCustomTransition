@@ -1,6 +1,7 @@
 /**
  * お店一覧を表示するコンポーネント
  */
+
 import React, {
   Component
 } from 'react';
@@ -20,6 +21,9 @@ import {
 
 //アルバム詳細用の共通コンポーネントのインポート宣言
 import CommonCard from '../common/CommonCard';
+
+//react-native-router-fluxのインポート宣言(Actionを使用)
+import { Actions } from 'react-native-router-flux';
 
 //HTTP通信用のライブラリ'axios'のインポート宣言
 import axios from 'axios';
@@ -52,7 +56,7 @@ class ShopList extends Component {
   //ショップデータのレンダリングを行う
   renderShops() {
     return this.state.shops.map(shop =>
-      <CommonCard key={shop.id} shop={shop} />
+      <CommonCard key={shop.id} shop={shop} onPress={ () => Actions.ShopDetailContents({id: shop.id, title: "お店詳細"}) } />
     );
   }
 
@@ -88,6 +92,7 @@ class ShopList extends Component {
       );
     }
 
+    //正常処理時
     return (
       <ScrollView style={styles.backgroundContainer}>
         {this.renderShops()}

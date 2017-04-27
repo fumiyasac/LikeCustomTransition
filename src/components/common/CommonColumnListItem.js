@@ -14,11 +14,8 @@ import {
   Thumbnail
 } from 'native-base';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
-import { Actions } from 'react-native-router-flux';
-
 //一覧シンプルリスト表示用のベースコンポーネントの内容を定義する
-const CommonColumnListItem = ({ archive }) => {
+const CommonColumnListItem = ({ archive, onPress }) => {
 
   //取得した引数（オブジェクト：{ archive }）を分割する
   const { id, title, catchcopy, image_url } = archive;
@@ -34,7 +31,7 @@ const CommonColumnListItem = ({ archive }) => {
         <Text note>{catchcopy}</Text>
       </Body>
       <Right>
-        <Button transparent onPress={ () => console.log("Work In Progress.") }>
+        <Button transparent onPress={onPress}>
           <Text>詳細</Text>
         </Button>
       </Right>

@@ -19,17 +19,14 @@ import {
   Icon,
 } from 'native-base';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
-import { Actions } from 'react-native-router-flux';
-
 //ヘッダー用のベースコンポーネントの内容を定義する
-const CommonHeader = ({ title, icon }) => {
+const CommonHeader = ({ title, icon, onPress }) => {
 
   //表示する要素を返す
   return (
     <Header iosBarStyle="light-content" style={styles.headerBackStyle} hasTabs>
       <Left>
-        <Button transparent onPress={ () => Actions.pop() }>
+        <Button transparent onPress={onPress}>
           <Icon style={styles.backStyle} name={icon || "arrow-back"} />
         </Button>
       </Left>

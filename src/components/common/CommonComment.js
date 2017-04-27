@@ -1,6 +1,7 @@
 /**
  * コメント表示用UIのベース部分を表示するコンポーネント
  */
+
 import React from 'react';
 
 //ReactNativeを使用したコンポーネントの呼び出し

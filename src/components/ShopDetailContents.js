@@ -1,6 +1,7 @@
 /**
  * お店詳細画面を表示するコンポーネント
  */
+
 import React, {
   Component
 } from 'react';
@@ -35,6 +36,9 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 import ShopList from './ShopDetailScreen/ShopInfo';
 import ShopComment from './ShopDetailScreen/ShopComment';
 
+//react-native-router-fluxのインポート宣言(Actionを使用)
+import { Actions } from 'react-native-router-flux';
+
 //コンポーネントの内容を定義する ※ ClassComponent
 class ShopDetailContents extends Component {
 
@@ -46,7 +50,7 @@ class ShopDetailContents extends Component {
   render() {
     return (
       <Container>
-        <CommonHeader title={this.props.title} />
+        <CommonHeader title={this.props.title} onPress={ () => Actions.pop() } />
         <Container>
           <ScrollableTabView
             tabBarActiveTextColor={'#333'}

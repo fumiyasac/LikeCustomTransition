@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`共通コンポーネント(コメント表示用部分)のスナップショットテスト 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      undefined,
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    avatar={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomWidth": null,
+        "borderColor": "#c9c9c9",
+        "flexDirection": "row",
+        "marginLeft": 15,
+        "paddingBottom": null,
+        "paddingRight": null,
+        "paddingTop": null,
+      }
+    }
+    virtual={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "alignSelf": "center",
+          "flex": 0,
+          "flexDirection": "row",
+        }
+      }
+      virtual={undefined}
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "borderRadius": 28,
+            "height": 56,
+            "width": 56,
+          }
+        }
+        virtual={undefined}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": null,
+          "alignSelf": null,
+          "borderBottomWidth": 0.5,
+          "borderColor": "#c9c9c9",
+          "flex": 1,
+          "marginLeft": 15,
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        }
+      }
+      virtual={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#000",
+            "fontFamily": "System",
+            "fontSize": 16,
+            "marginLeft": null,
+            "marginRight": 10,
+          }
+        }
+        virtual={undefined}
+      >
+        ランチもディナーも大満足できる！
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        note={true}
+        style={
+          Object {
+            "color": "#808080",
+            "fontFamily": "System",
+            "fontSize": 14,
+            "fontWeight": "200",
+            "lineHeight": 18,
+            "marginLeft": null,
+            "marginRight": 10,
+            "marginTop": 8,
+          }
+        }
+        virtual={undefined}
+      >
+        ランチもお手頃な値段で楽しむことができ、それでいてディナーも大満足のメニューラインナップ。また定期的にもお客さん参加型のイベント等も開催されておりとても楽しむことができます。
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "alignSelf": "stretch",
+          "borderBottomWidth": 0.5,
+          "borderColor": "#c9c9c9",
+          "flex": 0,
+          "paddingBottom": 10,
+          "paddingLeft": null,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        }
+      }
+      virtual={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        note={true}
+        style={
+          Object {
+            "alignSelf": null,
+            "color": "#808080",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "200",
+          }
+        }
+        virtual={undefined}
+      >
+        3 hours ago
+      </Text>
+    </View>
+  </View>
+</View>
+`;

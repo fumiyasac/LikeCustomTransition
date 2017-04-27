@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`共通コンポーネント(コラムアーカイブ表示用部分)のスナップショットテスト 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      undefined,
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomWidth": null,
+        "borderColor": "#c9c9c9",
+        "flexDirection": "row",
+        "marginLeft": 15,
+        "paddingBottom": null,
+        "paddingRight": null,
+        "paddingTop": null,
+      }
+    }
+    thumbnail={true}
+    virtual={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "alignSelf": "center",
+          "flex": 0,
+          "flexDirection": "row",
+        }
+      }
+      virtual={undefined}
+    >
+      <Image
+        size={80}
+        source={1}
+        square={true}
+        style={
+          Object {
+            "borderRadius": 0,
+            "height": 56,
+            "width": 56,
+          }
+        }
+        virtual={undefined}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": null,
+          "alignSelf": null,
+          "borderBottomWidth": 0.5,
+          "borderColor": "#c9c9c9",
+          "flex": 1,
+          "marginLeft": 15,
+          "paddingBottom": 15,
+          "paddingTop": 15,
+        }
+      }
+      virtual={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#000",
+            "fontFamily": "System",
+            "fontSize": 16,
+            "marginLeft": null,
+            "marginRight": 10,
+          }
+        }
+        virtual={undefined}
+      >
+        パスタのお店
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        note={true}
+        style={
+          Object {
+            "color": "#808080",
+            "fontFamily": "System",
+            "fontSize": 14,
+            "fontWeight": "200",
+            "marginLeft": null,
+            "marginRight": 10,
+          }
+        }
+        virtual={undefined}
+      >
+        美味しいパスタを楽しむことができます。
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "alignSelf": "stretch",
+          "borderBottomWidth": 0.5,
+          "borderColor": "#c9c9c9",
+          "flex": 0,
+          "justifyContent": "center",
+          "paddingBottom": 15,
+          "paddingLeft": null,
+          "paddingRight": 15,
+          "paddingTop": 15,
+        }
+      }
+      virtual={undefined}
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": null,
+            "backgroundColor": "transparent",
+            "borderColor": "#007aff",
+            "borderRadius": 5,
+            "borderWidth": null,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": null,
+            "justifyContent": "space-between",
+            "opacity": 1,
+            "paddingBottom": 6,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "paddingTop": 6,
+            "shadowColor": null,
+            "shadowOffset": null,
+            "shadowOpacity": null,
+            "shadowRadius": null,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#007aff",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "lineHeight": 19,
+              "marginLeft": 0,
+              "marginRight": 0,
+            }
+          }
+          virtual={undefined}
+        >
+          詳細
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

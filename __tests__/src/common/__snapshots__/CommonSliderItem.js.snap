@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`共通コンポーネント(コラムのスライダー表示用部分)のスナップショットテスト 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F5FCFF",
+      "height": 375,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://s3-ap-northeast-1.amazonaws.com/otsuka-shop/images/column/column1.jpg",
+      }
+    }
+    style={
+      Object {
+        "backgroundColor": "#eee",
+        "height": 375,
+        "width": 750,
+      }
+    }
+  />
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.6)",
+        "bottom": 0,
+        "left": 0,
+        "paddingBottom": 20,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 24,
+        "position": "absolute",
+        "right": 0,
+      }
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 14,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      コラムタイトル1
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 12,
+          "marginTop": 5,
+        }
+      }
+    >
+      ▶︎ 記事詳細へ
+    </Text>
+  </View>
+</View>
+`;
