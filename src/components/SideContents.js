@@ -10,10 +10,8 @@ import React, {
 //ReactNativeを使用したコンポーネントの呼び出し
 import {
   StyleSheet,
-  ScrollView,
   View,
   Image,
-  TouchableOpacity,
   Text,
   Dimensions
 } from 'react-native';

@@ -19,7 +19,7 @@ import {
   Button,
 } from 'native-base';
 
-//アルバム詳細用の共通コンポーネントのインポート宣言
+//詳細用の共通コンポーネントのインポート宣言
 import CommonCard from '../common/CommonCard';
 
 //react-native-router-fluxのインポート宣言(Actionを使用)

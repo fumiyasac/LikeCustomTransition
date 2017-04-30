@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react';
 
-//react-native-router-fluxのインポート宣言(Actionを使用)
+//react-native-router-fluxのインポート宣言(Router,Sceneを使用)
 import { Router, Scene } from 'react-native-router-flux';
 
 //自作コンポーネント
